@@ -92,7 +92,7 @@ window.PROJECTS = [
         "org": "2024 Outstanding Undergraduate Research Award, CAU AI Humanities",
         "date": "2024.08",
         "team": "2 people",
-        "thumb": "images/projects/rider-safety/thumb.jpg",
+        "thumb": "images/projects/rider-safety/poster.jpg",
         "gallery": [],
         "features": [
             "Designed an injury and accident prevention service on traffic accident data, addressing the rise in platform-worker accidents",

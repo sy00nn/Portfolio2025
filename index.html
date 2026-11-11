@@ -448,6 +448,14 @@
         });
     });
 
+    // tall images (e.g. a poster) keep full width and scroll inside the media slot
+    detail.addEventListener('load', function (e) {
+        if (e.target.id !== 'project-detail-image') return;
+        var media = e.target.parentNode;
+        media.classList.toggle('is-tall', e.target.naturalHeight > e.target.naturalWidth * 1.6);
+        media.scrollTop = 0;
+    }, true);
+
     /* ---- project filter ---- */
     var filterButtons = document.querySelectorAll('.filter-btn');
     var projectItems = list.querySelectorAll('.project-item');

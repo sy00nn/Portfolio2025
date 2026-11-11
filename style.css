@@ -743,6 +743,7 @@ body {
     margin-left: auto;
     aspect-ratio: 1.45 / 1;
     object-fit: cover;
+    object-position: center top;
     filter: grayscale(82%) sepia(10%) saturate(72%) contrast(1.02) brightness(1.01);
     transition: filter 0.2s ease;
 }
@@ -954,6 +955,17 @@ body {
     max-height: var(--panel-visible);
     object-fit: contain;
     object-position: left top;
+}
+
+.project-detail-media.is-tall {
+    max-height: var(--panel-visible);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar) transparent;
+}
+
+.project-detail-media.is-tall .project-detail-image {
+    max-height: none;
 }
 
 .project-detail-image.is-placeholder {
@@ -1310,6 +1322,11 @@ body {
 
     .project-detail-image {
         max-height: none;
+    }
+
+    .project-detail-media.is-tall {
+        max-height: none;
+        overflow: visible;
     }
 
     .project-detail-strip {
