@@ -13,6 +13,10 @@
     --hairline: rgba(17, 17, 17, 0.16);
     --hairline-soft: rgba(17, 17, 17, 0.12);
     --scrollbar: rgba(194, 183, 160, 0.72);
+    /* page ground; reused (fixed to the viewport) behind sticky bars */
+    --paper:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.7), transparent 32%),
+        linear-gradient(180deg, #f5f2ec 0%, #f1eee7 100%);
 
     --page-pad-top: 22px;
     --page-pad-x: 28px;
@@ -27,7 +31,11 @@
     --scroll-fade-size: 34px;
     /* scrolling content fades out before it reaches the masthead */
     --masthead-fade: calc(var(--topbar-height) * 0.8);
-    --project-meta-width: min(16vw, 210px);
+    /* visible height inside a scrolling panel (viewport minus page padding,
+       masthead offset and the panel's own top/bottom padding) */
+    --panel-visible: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom) - var(--topbar-height) - 34px - var(--scroll-fade-size));
+    /* project list thumbnail width, as a share of its 4-column slot */
+    --project-thumb-width: 85%;
     /* width of the Awards year glyphs (2.113x their font-size) — the About
        labels start at the same x so both panels' rules begin together */
     --rail-start: calc(2.113 * clamp(1.8rem, 4vw, 3.2rem));
@@ -47,9 +55,7 @@ body {
 body {
     font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: var(--text);
-    background:
-        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.7), transparent 32%),
-        linear-gradient(180deg, #f5f2ec 0%, #f1eee7 100%);
+    background: var(--paper);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -641,8 +647,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: clamp(14px, 1.8vw, 26px);
-    margin-top: calc(var(--topbar-height) + 34px);
+    padding-top: calc(var(--topbar-height) + 34px);
     padding-bottom: 14px;
+    /* stays put while the list scrolls under it; the viewport-fixed paper
+       matches the page ground so the bar has no visible edge */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--paper);
+    background-attachment: fixed;
 }
 
 .filter-btn {
@@ -670,58 +683,93 @@ body {
 .project-list {
     display: flex;
     flex-direction: column;
+    gap: 26px;
+    padding-top: 12px;
+    /* keeps the right-aligned items off the very edge */
+    padding-right: clamp(24px, 4vw, 64px);
 }
 
+/* title + venue sit right-aligned against the thumbnail, as in the reference */
 .project-item {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: var(--gap);
-    align-items: start;
-    padding: 22px 0;
-    border-top: 1px solid var(--hairline);
+    align-items: end;
+    color: inherit;
+    text-decoration: none;
 }
 
 .project-item[hidden] {
     display: none;
 }
 
-.project-meta {
-    grid-column: 1 / span 5;
-    width: var(--project-meta-width);
+.project-copy {
+    grid-column: 1 / span 8;
     justify-self: end;
+    width: min(22vw, 300px);
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--hairline);
     text-align: right;
-}
-
-.project-org {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.3;
-    color: var(--text);
-}
-
-.project-date {
-    margin: 5px 0 0;
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
-    color: var(--muted);
-}
-
-.project-role {
-    margin: 2px 0 0;
-    font-size: 0.85rem;
-    color: var(--muted);
-}
-
-.project-body {
-    grid-column: 7 / -1;
 }
 
 .project-title {
     margin: 0;
-    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    font-size: 1.02rem;
     font-weight: 500;
-    line-height: 1.18;
-    letter-spacing: -0.015em;
+    line-height: 1.2;
+}
+
+.project-venue {
+    margin: 6px 0 0;
+    font-size: 0.93rem;
+    line-height: 1.32;
+    color: var(--muted);
+}
+
+.project-period {
+    margin: 3px 0 0;
+    font-size: 0.86rem;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+}
+
+.project-media {
+    grid-column: 9 / span 4;
+}
+
+.project-image {
+    display: block;
+    width: var(--project-thumb-width);
+    margin-left: auto;
+    aspect-ratio: 1.45 / 1;
+    object-fit: cover;
+    filter: grayscale(82%) sepia(10%) saturate(72%) contrast(1.02) brightness(1.01);
+    transition: filter 0.2s ease;
+}
+
+.project-item:hover .project-image,
+.project-item:focus-visible .project-image {
+    filter: none;
+}
+
+.project-item:hover .project-title {
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+    text-decoration-thickness: 1px;
+}
+
+/* stands in for a missing thumbnail */
+.is-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(17, 17, 17, 0.045);
+    border: 1px solid var(--hairline-soft);
+    color: var(--muted);
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    text-align: center;
 }
 
 .project-features {
@@ -757,13 +805,6 @@ body {
     font-style: italic;
 }
 
-.project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 12px;
-}
-
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -787,6 +828,190 @@ body {
     margin: 26px 0 0;
     font-size: 0.95rem;
     color: var(--muted);
+}
+
+/* ------------------------------------------------------------
+   PROJECT DETAIL — copy left, image (and gallery strip) right
+   ------------------------------------------------------------ */
+
+.project-detail-panel {
+    margin-top: calc(-1 * var(--topbar-height));
+    padding-top: calc(var(--topbar-height) + 34px);
+    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom));
+    padding-bottom: var(--scroll-fade-size);
+    overflow-y: auto;
+    padding-right: 6px;
+    scrollbar-gutter: stable;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        #000 var(--masthead-fade),
+        #000 calc(100% - var(--scroll-fade-size)),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        #000 var(--masthead-fade),
+        #000 calc(100% - var(--scroll-fade-size)),
+        transparent 100%
+    );
+}
+
+/* fills the panel so the copy can sit at the bottom of the screen */
+#project-detail-render {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* row 1: back link (top-left) · row 2: copy, pushed to the bottom-left.
+   the image and gallery strip span both rows from the top. */
+.project-detail-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto 1fr;
+    gap: var(--gap);
+    align-items: start;
+}
+
+.project-back {
+    grid-column: 1 / span 5;
+    grid-row: 1;
+    justify-self: start;
+}
+
+.project-detail-copy {
+    grid-column: 1 / span 5;
+    grid-row: 2;
+    align-self: end;
+}
+
+.project-back {
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.project-back:hover {
+    color: var(--text);
+    border-bottom-color: currentColor;
+}
+
+/* full titles run long, so this sits a step below the brand size */
+.project-detail-title {
+    margin: 0;
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 500;
+}
+
+.project-detail-meta {
+    margin: 16px 0 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    color: var(--muted);
+}
+
+.project-detail-period {
+    margin: 3px 0 0;
+    font-size: 0.86rem;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+}
+
+.project-detail-copy .project-features {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--hairline);
+}
+
+.project-detail-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: 22px;
+    font-size: 0.95rem;
+}
+
+/* image stays in view while the copy scrolls */
+/* same 4-column slot with or without the gallery strip beside it */
+.project-detail-media {
+    grid-column: 7 / span 4;
+    grid-row: 1 / span 2;
+    position: sticky;
+    top: 0;
+}
+
+.project-detail-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: var(--panel-visible);
+    object-fit: contain;
+    object-position: left top;
+}
+
+.project-detail-image.is-placeholder {
+    aspect-ratio: 1.45 / 1;
+}
+
+/* single image (no gallery strip): slide the image into the strip's empty
+   slot so it sits flush with the right edge */
+.project-detail-grid:not(.has-strip) .project-detail-media {
+    grid-column: 9 / span 4;
+}
+
+.project-detail-grid:not(.has-strip) .project-detail-image {
+    object-position: right top;
+}
+
+/* the strip scrolls on its own, so a long gallery never stretches the page
+   and the copy stays pinned to the bottom of the visible screen */
+.project-detail-strip {
+    grid-column: 11 / span 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+    max-height: var(--panel-visible);
+    overflow-y: auto;
+    padding-right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar) transparent;
+}
+
+.project-detail-strip::-webkit-scrollbar { width: 6px; }
+.project-detail-strip::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 999px; }
+
+.project-detail-thumb {
+    flex: 0 0 auto;
+}
+
+.project-detail-thumb {
+    border: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.18s ease;
+}
+
+.project-detail-thumb:hover,
+.project-detail-thumb.active {
+    opacity: 1;
+}
+
+.project-detail-thumb img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.45 / 1;
+    object-fit: cover;
 }
 
 /* ------------------------------------------------------------
@@ -909,7 +1134,8 @@ body {
     /* panels stop being viewport-locked: no negative offsets, no masks */
     .about-panel,
     .awards-panel,
-    .project-panel {
+    .project-panel,
+    .project-detail-panel {
         margin-top: 0;
         padding-top: 0;
         padding-right: 0;
@@ -1028,31 +1254,75 @@ body {
     }
 
     .project-filter {
-        margin-top: 0;
+        padding-top: 0;
+        position: static;
+        background: none;
     }
 
+    .project-list {
+        padding-right: 0;
+    }
+
+    /* thumbnail on top, title + venue under it */
     .project-item {
         grid-template-columns: 1fr;
         gap: 10px;
     }
 
-    .project-meta,
-    .project-body {
+    .project-media {
         grid-column: 1;
+        order: -1;
     }
 
-    .project-meta {
-        width: auto;
+    /* no hover on touch screens, so show thumbnails in colour */
+    .project-image {
+        width: 100%;
+        filter: none;
+    }
+
+    .project-copy {
+        grid-column: 1;
         justify-self: start;
+        width: auto;
+        padding-bottom: 14px;
         text-align: left;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 4px 12px;
     }
 
-    .project-meta p {
-        margin: 0;
+    .project-detail-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 26px;
+    }
+
+    .project-back,
+    .project-detail-copy,
+    .project-detail-media,
+    .project-detail-strip {
+        grid-row: auto;
+    }
+
+    .project-detail-copy,
+    .project-detail-media,
+    .project-detail-grid:not(.has-strip) .project-detail-media {
+        grid-column: 1;
+        position: static;
+    }
+
+    .project-detail-image {
+        max-height: none;
+    }
+
+    .project-detail-strip {
+        grid-column: 1;
+        position: static;
+        flex-direction: row;
+        max-height: none;
+        overflow-x: auto;
+        overflow-y: visible;
+    }
+
+    .project-detail-thumb {
+        flex: 0 0 28%;
     }
 
     .contact-intro,
