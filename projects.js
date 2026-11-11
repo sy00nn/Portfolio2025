@@ -269,12 +269,9 @@ window.PROJECTS = [
         "org": "CUAI, Chung-Ang University AI Society",
         "date": "2024.11",
         "team": "Solo",
-        "thumb": "images/projects/hai-anomaly/thumb.jpg",
+        "thumb": "images/projects/hai-anomaly/01.jpg",
         "gallery": [
-            "images/projects/hai-anomaly/01.jpg",
-            "images/projects/hai-anomaly/02.jpg",
-            "images/projects/hai-anomaly/03.jpg",
-            "images/projects/hai-anomaly/04.jpg"
+            "images/projects/hai-anomaly/02.jpg"
         ],
         "features": [
             "Built autoencoder models for time-series anomaly detection on the HAI (HIL-based Augmented ICS) security dataset",
