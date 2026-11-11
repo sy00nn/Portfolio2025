@@ -27,7 +27,7 @@ window.PROJECTS = [
         "gallery": [
             "images/projects/article-agent/03.jpg",
             "images/projects/article-agent/05.jpg",
-            "images/projects/article-agent/thumb.png"
+            "images/projects/article-agent/04.png"
         ],
         "features": [
             "Built six AI agents to close the productivity and quality gap in newsrooms &mdash; topic generation, topic research, article drafting, headline and subhead generation, copy review, and article recommendation",
@@ -89,7 +89,7 @@ window.PROJECTS = [
         "shortTitle": "Rider Safety AI",
         "title": "AI Prediction Service for Platform Delivery Riders",
         "category": "competitions",
-        "org": "Research Excellence Award, CAU AI Humanities",
+        "org": "2024 Outstanding Undergraduate Research Award, CAU AI Humanities",
         "date": "2024.08",
         "team": "2 people",
         "thumb": "images/projects/rider-safety/thumb.jpg",
@@ -132,7 +132,11 @@ window.PROJECTS = [
         "date": "2024.11",
         "team": "4 people",
         "thumb": "images/projects/used-car-price/thumb.jpg",
-        "gallery": [],
+        "gallery": [
+            "images/projects/used-car-price/01.jpg",
+            "images/projects/used-car-price/02.jpg",
+            "images/projects/used-car-price/03.jpg"
+        ],
         "features": [
             "Defined the problem and ran EDA on the price formation structure, centred on brand, model year, and mileage",
             "Cleaned engine, transmission, and colour data into model-ready features, improving overall data quality",
@@ -159,11 +163,14 @@ window.PROJECTS = [
         "shortTitle": "Sanjae Mate",
         "title": "Sanjae Mate &mdash; All-in-One AI Service for Industrial Injury Claims",
         "category": "competitions",
-        "org": "Encouragement Award, CAU Patent Competition",
+        "org": "Honorable Mention, CAU Patent Competition",
         "date": "2024.12",
         "team": "3 people",
-        "thumb": "images/projects/sanjae-mate/thumb.jpg",
-        "gallery": [],
+        "thumb": "images/projects/sanjae-mate/01.jpg",
+        "gallery": [
+            "images/projects/sanjae-mate/02.jpg",
+            "images/projects/sanjae-mate/03.jpg"
+        ],
         "features": [
             "Planned an all-in-one platform covering prevention, claim filing, and rehabilitation on KCOMWEL and Ministry of Employment and Labor data, cutting through the complexity of the claims process",
             "Designed and prototyped the data and AI features: designated-hospital map visualization, automatic review summarization, and accident type prediction",
@@ -198,11 +205,13 @@ window.PROJECTS = [
         "shortTitle": "On-Chain Tracing",
         "title": "On-Chain Illicit Fund Pattern Analysis",
         "category": "competitions",
-        "org": "Encouragement Award, CAU Virtual Asset Tracing Competition",
+        "org": "3rd Place, CAU Virtual Asset Tracing Competition",
         "date": "2024.12",
         "team": "3 people",
-        "thumb": "images/projects/onchain-tracing/thumb.jpg",
-        "gallery": [],
+        "thumb": "images/projects/onchain-tracing/01.jpg",
+        "gallery": [
+            "images/projects/onchain-tracing/02.jpg"
+        ],
         "features": [
             "Defined the problem and tracing scope for crypto crime types &mdash; scams, ransomware, DPRK-linked activity, and darknet markets &mdash; on on-chain data",
             "Visualized the on-chain analysis process: cluster identification, address relationship graphs, and fund movement paths",
