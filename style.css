@@ -1426,3 +1426,12 @@ body {
         animation-duration: 0.01ms !important;
     }
 }
+
+/* language toggle: the current language reads in full ink */
+.nav { grid-template-columns: repeat(5, max-content); }
+.lang-btn [data-lang] { color: var(--muted); transition: color 0.18s ease; }
+.lang-btn [data-lang].is-current { color: var(--text); }
+
+/* Korean: break lines between words, not inside them; no synthetic italic */
+html:lang(ko) body { word-break: keep-all; }
+html:lang(ko) .hero-tagline { font-style: normal; }
