@@ -292,8 +292,10 @@ window.PROJECTS = [
         "org": "CUAI, Chung-Ang University AI Society",
         "date": "2024.10",
         "team": "Solo",
-        "thumb": "images/projects/kcontent-nlp/thumb.png",
-        "gallery": [],
+        "thumb": "images/projects/kcontent-nlp/overview.jpg",
+        "gallery": [
+            "images/projects/kcontent-nlp/topics.jpg"
+        ],
         "features": [
             "Collected and analysed 4,000+ film and drama reviews, visualizing topic relationships, key keywords, and review distribution to surface how audiences responded to each title",
             "Designed the sentiment and topic analysis pipeline: crawling, preprocessing, tokenization, LDA, and pyLDAvis visualization",
