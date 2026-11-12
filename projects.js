@@ -87,9 +87,10 @@ window.PROJECTS = [
         "thumb": "images/projects/rider-safety/poster.jpg",
         "gallery": [],
         "features": [
-            "Designed an injury and accident prevention service on traffic accident data, addressing the rise in platform-worker accidents",
-            "Ran EDA on three years of Seoul motorcycle accident data and built an XGBoost injury severity model, reaching 96% accuracy and F1-score",
-            "Delivered real-time risk warnings and post-accident injury-claim messaging through the model and the OpenAI API"
+            "<strong>Problem</strong> Accidents among platform delivery riders were rising, but riders had no way to see their risk in advance or get help with injury claims afterwards",
+            "<strong>Action</strong> Ran EDA on three years of Seoul motorcycle accident data and built an XGBoost model that predicts injury severity",
+            "<strong>Action</strong> Combined the model with the OpenAI API to deliver real-time risk warnings and post-accident injury-claim guidance",
+            "<strong>Result</strong> Reached 96% accuracy and F1-score, and received the Outstanding Research Award"
         ],
         "links": [
             {
@@ -130,7 +131,7 @@ window.PROJECTS = [
             "images/projects/used-car-price/03.jpg"
         ],
         "features": [
-            "<strong>Problem</strong> Predict US used-car prices from listings with messy engine, transmission, and colour fields",
+            "<strong>Situation</strong> A Kaggle datathon task to predict US used-car prices from cars.com listings whose engine, transmission, and colour fields were not standardised",
             "<strong>Action</strong> Defined the problem and ran EDA on price formation by brand, model year, and mileage; cleaned the raw fields into model-ready features",
             "<strong>Action</strong> Stacked and ensembled models with AutoGluon",
             "<strong>Result</strong> Improved prediction performance 20% and won the Grand Prize; identified mileage, model, and release year as the core price drivers, with a distinct premium on retro cars"
@@ -206,7 +207,7 @@ window.PROJECTS = [
             "images/projects/onchain-tracing/02.jpg"
         ],
         "features": [
-            "<strong>Problem</strong> Trace where the WannaCry ransom went after the 2017 attack that infected 200,000+ computers across 150 countries",
+            "<strong>Situation</strong> A competition task to trace the ransom from the 2017 WannaCry attack, which infected 200,000+ computers across 150 countries",
             "<strong>Action</strong> Defined the tracing scope and applied entity resolution and link analysis in Chainalysis Reactor: clustered ransom addresses for versions 1.0 and 2.0 into entities and traced their fund flows",
             "<strong>Action</strong> Structured the laundering process into four steps: chain-hopping, conversion to Monero, splitting into small amounts, and cash-out through low-KYC exchanges",
             "<strong>Result</strong> Mapped about 4.7 BTC (1.0) and 52 BTC (2.0) from ransom wallets through ShapeShift and Changelly into Monero, and placed 3rd"
@@ -270,7 +271,7 @@ window.PROJECTS = [
             "images/projects/hai-anomaly/01.jpg"
         ],
         "features": [
-            "<strong>Problem</strong> Detect attacks in large-scale industrial control system time series (HAI dataset), where attack points are rare",
+            "<strong>Situation</strong> A task to build an attack detection model on the HAI industrial control system dataset, a large-scale time series where attack points are rare",
             "<strong>Action</strong> Built the preprocessing pipeline: missing value handling, scaling, feature generation, and SMOTE for class imbalance",
             "<strong>Action</strong> Trained autoencoders that flag anomalies by reconstruction error, tuning hyperparameters with Optuna and the error threshold separately",
             "<strong>Result</strong> Reached a TaPR of 0.53"
@@ -333,89 +334,90 @@ window.PROJECTS_KO = {
         "title": "Newsroom Agent",
         "org": "(주)뤼튼테크놀로지스 AX팀",
         "features": [
-            "<strong>문제</strong> 기사 주제 선정·초안 작성·제목 작성·교정이 수작업 중심으로 진행되어 기자 생산성 저하 및 품질 편차 발생",
-            "<strong>실행</strong> 기사 생산 과정(주제 생성, 리서치, 초안 작성, 제목·부제 생성, 윤문, 추천)을 분리하여 6개 역할의 AI Agent로 구조화",
-            "<strong>실행</strong> LangGraph 기반 Multi-Agent Workflow 설계 및 Prompt Engineering·Few-shot을 통한 출력 일관성 개선. 기자 문체 학습 기반 초안 생성, 성별·연령 기반 기사 추천 구현",
-            "<strong>실행</strong> 웹 크롤링·API Call 기반 외부 데이터 수집 자동화부터 Gradio·Streamlit Web UI 구현까지 단독 수행"
+            "<strong>Problem</strong> 기사 주제 선정·초안 작성·제목 작성·교정이 수작업 중심으로 진행되어 기자 생산성 저하 및 품질 편차 발생",
+            "<strong>Action</strong> 기사 생산 과정(주제 생성, 리서치, 초안 작성, 제목·부제 생성, 윤문, 추천)을 분리하여 6개 역할의 AI Agent로 구조화",
+            "<strong>Action</strong> LangGraph 기반 Multi-Agent Workflow 설계 및 Prompt Engineering·Few-shot을 통한 출력 일관성 개선. 기자 문체 학습 기반 초안 생성, 성별·연령 기반 기사 추천 구현",
+            "<strong>Action</strong> 웹 크롤링·API Call 기반 외부 데이터 수집 자동화부터 Gradio·Streamlit Web UI 구현까지 단독 수행"
         ]
     },
     "quant-research": {
-        "title": "CSSP 사모펀드 퀀트 리서치",
+        "title": "CSSP 사모펀드 퀀트 리서치 분석",
         "org": "다원자산운용(주) 자산운용본부",
         "features": [
-            "<strong>문제</strong> KOSPI·KOSDAQ 25년, 약 3억 건의 시계열 데이터가 엑셀 기반으로 관리되어 팩터 리서치의 처리 속도와 확장성에 한계",
-            "<strong>실행</strong> Python ETL(Wide→Long 변환, 컬럼 표준화, 분할 적재)을 통해 MySQL 중심 데이터 파이프라인으로 재설계",
-            "<strong>실행</strong> 팩터 스코어링 및 5분위 백테스트를 SQL로 구현(월·분기·반기 리밸런싱, 베타 중립 롱숏, IC)하고 대시보드형 레포트로 시각화",
-            "<strong>성과</strong> 1분위 연환산 수익률 22.1%(KOSPI 7.1%), IC 0.182 확인 → 연산 속도 60% 단축, 평균 3.9% 펀드 초과수익률(&rsquo;25.07) 기여"
+            "<strong>Problem</strong> KOSPI·KOSDAQ 25년, 약 3억 건의 시계열 데이터가 엑셀 기반으로 관리되어 팩터 리서치의 처리 속도와 확장성에 한계",
+            "<strong>Action</strong> Python ETL(Wide→Long 변환, 컬럼 표준화, 분할 적재)을 통해 MySQL 중심 데이터 파이프라인으로 재설계",
+            "<strong>Action</strong> 팩터 스코어링 및 5분위 백테스트를 SQL로 구현(월·분기·반기 리밸런싱, 베타 중립 롱숏, IC)하고 대시보드형 레포트로 시각화",
+            "<strong>Result</strong> 1분위 연환산 수익률 22.1%(KOSPI 7.1%), IC 0.182 확인 → 연산 속도 60% 단축, 평균 3.9% 펀드 초과수익률(&rsquo;25.07) 기여"
         ]
     },
     "rider-safety": {
         "title": "플랫폼 배달 라이더를 위한 AI 예측 서비스",
         "org": "제33회 중앙대학교 인공지능인문학 국내학술대회 연구우수상",
         "features": [
-            "플랫폼 노동자 사고 증가 문제에 대응하여 교통사고 데이터 기반 부상·사고 예방 서비스 기획",
-            "서울시 이륜차 사고 3개년 데이터 EDA 및 XGBoost 기반 부상 심각도 예측 모델링 (정확도·F1-score 96%)",
-            "예측 모델과 OpenAI API를 연계한 실시간 위험 알림 및 사고 후 산재 신청 안내 기능 구현"
+            "<strong>Problem</strong> 플랫폼 배달 라이더 사고가 늘고 있으나, 사전 위험 인지와 사고 후 산재 신청 지원 수단이 부족",
+            "<strong>Action</strong> 서울시 이륜차 사고 3개년 데이터 EDA 및 XGBoost 기반 부상 심각도 예측 모델 구축",
+            "<strong>Action</strong> 예측 모델과 OpenAI API를 연계해 실시간 위험 알림 및 사고 후 산재 신청 안내 기능 구현",
+            "<strong>Result</strong> 정확도·F1-score 96% 달성, 연구우수상 수상"
         ]
     },
     "used-car-price": {
         "title": "미국 중고차 가격 예측",
         "org": "CUAI X DArt-B Kaggle 데이터톤, 대상",
         "features": [
-            "<strong>문제</strong> 엔진·변속기·색상 등 차량 속성 데이터가 표준화되어 있지 않아 일관된 분석 및 가격 예측 모델링에 한계",
-            "<strong>실행</strong> 문제 정의 및 브랜드·연식·주행거리 중심 가격 형성 구조 EDA, 핵심 Feature 정제 및 파생 변수 생성",
-            "<strong>실행</strong> AutoGluon 기반 모델 Stacking·Ensemble 적용",
-            "<strong>성과</strong> 예측 성능 20% 개선 및 대상 수상. 주행거리·모델·출시 연도를 핵심 가격 요인으로 도출하고 레트로 차량 프리미엄 현상 발견"
+            "<strong>Situation</strong> cars.com 중고차 매물 데이터로 가격을 예측하는 Kaggle 데이터톤 과제. 엔진·변속기·색상 등 차량 속성 데이터가 표준화되어 있지 않은 상태",
+            "<strong>Action</strong> 문제 정의 및 브랜드·연식·주행거리 중심 가격 형성 구조 EDA, 핵심 Feature 정제 및 파생 변수 생성",
+            "<strong>Action</strong> AutoGluon 기반 모델 Stacking·Ensemble 적용",
+            "<strong>Result</strong> 예측 성능 20% 개선 및 대상 수상. 주행거리·모델·출시 연도를 핵심 가격 요인으로 도출하고 레트로 차량 프리미엄 현상 발견"
         ]
     },
     "sanjae-mate": {
         "title": "산재메이트: 산재 신청 올인원 AI 서비스",
         "org": "안전한 데이터 활용 분야 특허 공모전, 장려상",
         "features": [
-            "<strong>문제</strong> 복잡한 신청 절차와 긴 처리 기간, 지정 병원·재활 정보 부족으로 산재보험 이용률 저조",
-            "<strong>실행</strong> 예방–신청–승인–재활 단계별 사용자 문제 정의 및 근로복지공단·고용노동부 공공 데이터 기반 올인원 서비스 기획",
-            "<strong>실행</strong> 공공 데이터를 3개 기능으로 연결: 지정의료기관·재활기관 지도 시각화, 병원 리뷰 크롤링 및 ChatGPT API 요약, 107,180건 데이터 기반 재해유형 예측 모델",
-            "<strong>성과</strong> 서비스 프로토타입 및 앱 설계 완성, 특허 공모전 장려상 수상"
+            "<strong>Problem</strong> 복잡한 신청 절차와 긴 처리 기간, 지정 병원·재활 정보 부족으로 산재보험 이용률 저조",
+            "<strong>Action</strong> 예방–신청–승인–재활 단계별 사용자 문제 정의 및 근로복지공단·고용노동부 공공 데이터 기반 올인원 서비스 기획",
+            "<strong>Action</strong> 공공 데이터를 3개 기능으로 연결: 지정의료기관·재활기관 지도 시각화, 병원 리뷰 크롤링 및 ChatGPT API 요약, 107,180건 데이터 기반 재해유형 예측 모델",
+            "<strong>Result</strong> 서비스 프로토타입 및 앱 설계 완성, 특허 공모전 장려상 수상"
         ]
     },
     "onchain-tracing": {
         "title": "WannaCry 랜섬웨어 자금 온체인 추적",
         "org": "가상자산 추적 실전대회, 장려상",
         "features": [
-            "<strong>문제</strong> 2017년 150개국 20만 대 이상을 감염시킨 WannaCry 랜섬웨어의 몸값 자금 흐름 추적 필요",
-            "<strong>실행</strong> 추적 범위 정의 및 Chainalysis Reactor 기반 엔티티 연결 분석으로 1.0·2.0 버전 몸값 주소 클러스터링 및 자금 흐름 추적",
-            "<strong>실행</strong> 자금 세탁 과정을 체인호핑 → Monero 전환 → 소액 분할 → KYC 미비 거래소 현금화의 4단계로 구조화",
-            "<strong>성과</strong> 약 4.7 BTC(1.0)·52 BTC(2.0)가 ShapeShift·Changelly를 거쳐 Monero로 전환된 경로 규명, 장려상 수상"
+            "<strong>Situation</strong> 2017년 150개국 20만 대 이상을 감염시킨 WannaCry 랜섬웨어의 몸값 자금 흐름을 추적하는 대회 과제",
+            "<strong>Action</strong> 추적 범위 정의 및 Chainalysis Reactor 기반 엔티티 연결 분석으로 1.0·2.0 버전 몸값 주소 클러스터링 및 자금 흐름 추적",
+            "<strong>Action</strong> 자금 세탁 과정을 체인호핑 → Monero 전환 → 소액 분할 → KYC 미비 거래소 현금화의 4단계로 구조화",
+            "<strong>Result</strong> 약 4.7 BTC(1.0)·52 BTC(2.0)가 ShapeShift·Changelly를 거쳐 Monero로 전환된 경로 규명, 장려상 수상"
         ]
     },
     "dpfl-fusion": {
         "title": "DPFL-FUSION: SHAP 기반 최적 노이즈 생성",
         "org": "2024 중앙대학교 인공지능학회 CUAI 동계컨퍼런스, 대상",
         "features": [
-            "<strong>문제</strong> 연합학습의 그래디언트 유출 방지를 위해 차등 프라이버시(DP) 적용 시, 전체 피처에 동일한 노이즈가 부여되어 모델 성능 저하 발생",
-            "<strong>실행</strong> 연구 방향 및 가설 설정: SHAP 중요도 기반 연속 매핑 함수로 피처별 노이즈를 차등 부여하고, 전체 노이즈 에너지를 유지해 DP 조건 보장",
-            "<strong>실행</strong> 값이 0인 가짜 피처를 추가해 주요 피처의 노이즈를 흡수하도록 설계, MNIST 기반 프라이버시–성능 트레이드오프 분석",
-            "<strong>성과</strong> 동일 DP 조건에서 기존 Adaptive DP 방법(Talaei, 2024) 대비 성능 개선, 동계 컨퍼런스 대상 수상"
+            "<strong>Problem</strong> 연합학습의 그래디언트 유출 방지를 위해 차등 프라이버시(DP) 적용 시, 전체 피처에 동일한 노이즈가 부여되어 모델 성능 저하 발생",
+            "<strong>Action</strong> 연구 방향 및 가설 설정: SHAP 중요도 기반 연속 매핑 함수로 피처별 노이즈를 차등 부여하고, 전체 노이즈 에너지를 유지해 DP 조건 보장",
+            "<strong>Action</strong> 값이 0인 가짜 피처를 추가해 주요 피처의 노이즈를 흡수하도록 설계, MNIST 기반 프라이버시–성능 트레이드오프 분석",
+            "<strong>Result</strong> 동일 DP 조건에서 기존 Adaptive DP 방법(Talaei, 2024) 대비 성능 개선, 동계 컨퍼런스 대상 수상"
         ]
     },
     "hai-anomaly": {
         "title": "HAI 보안 데이터셋 이상 탐지",
         "org": "CUAI 중앙대학교 인공지능 학회",
         "features": [
-            "<strong>문제</strong> 공격 구간이 희소한 대규모 산업제어시스템(ICS) 시계열 데이터(HAI)에서의 공격 탐지",
-            "<strong>실행</strong> 결측치 처리·스케일링·Feature 생성 및 SMOTE 기반 클래스 불균형 보정 전처리 파이프라인 구축",
-            "<strong>실행</strong> 재구성 오차 기반 AutoEncoder 이상 탐지 모델링, Optuna 하이퍼파라미터 최적화 및 임계값 튜닝",
-            "<strong>성과</strong> TaPR 0.53 달성"
+            "<strong>Situation</strong> 공격 구간이 희소한 대규모 산업제어시스템(ICS) 시계열 데이터셋(HAI)으로 공격 탐지 모델을 구축하는 과제",
+            "<strong>Action</strong> 결측치 처리·스케일링·Feature 생성 및 SMOTE 기반 클래스 불균형 보정 전처리 파이프라인 구축",
+            "<strong>Action</strong> 재구성 오차 기반 AutoEncoder 이상 탐지 모델링, Optuna 하이퍼파라미터 최적화 및 임계값 튜닝",
+            "<strong>Result</strong> TaPR 0.53 달성"
         ]
     },
     "kcontent-nlp": {
         "title": "K-콘텐츠 리뷰 NLP·토픽 모델링",
         "org": "CUAI 중앙대학교 인공지능 학회",
         "features": [
-            "<strong>문제</strong> 평점만으로는 흥행 K-콘텐츠에 대한 관객 반응을 구체적으로 파악하기 어려워 마케팅·후속작 기획 활용에 한계",
-            "<strong>실행</strong> Selenium 기반 〈선재 업고 튀어〉·〈파묘〉 관객 리뷰 약 2,000건 수집, Mecab-ko·TF-IDF 기반 명사 추출 및 전처리",
-            "<strong>실행</strong> Coherence 기반 토픽 수(26개) 선정 후 LDA 토픽 모델링, pyLDAvis로 토픽 간 관계 시각화",
-            "<strong>성과</strong> 작품별 핵심 소구점 도출(〈선재 업고 튀어〉: 스토리 몰입감·캐릭터 매력·감정적 반응 / 〈파묘〉: 서스펜스·미장센·배우 연기)"
+            "<strong>Problem</strong> 평점만으로는 흥행 K-콘텐츠에 대한 관객 반응을 구체적으로 파악하기 어려워 마케팅·후속작 기획 활용에 한계",
+            "<strong>Action</strong> Selenium 기반 〈선재 업고 튀어〉·〈파묘〉 관객 리뷰 약 2,000건 수집, Mecab-ko·TF-IDF 기반 명사 추출 및 전처리",
+            "<strong>Action</strong> Coherence 기반 토픽 수(26개) 선정 후 LDA 토픽 모델링, pyLDAvis로 토픽 간 관계 시각화",
+            "<strong>Result</strong> 작품별 핵심 소구점 도출(〈선재 업고 튀어〉: 스토리 몰입감·캐릭터 매력·감정적 반응 / 〈파묘〉: 서스펜스·미장센·배우 연기)"
         ]
     }
 };

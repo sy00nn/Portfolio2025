@@ -1435,3 +1435,5 @@ body {
 /* Korean: break lines between words, not inside them; no synthetic italic */
 html:lang(ko) body { word-break: keep-all; }
 html:lang(ko) .hero-tagline { font-style: normal; }
+/* all-caps reads larger than mixed-case menu labels at the same size */
+.lang-btn { font-size: 0.86rem; letter-spacing: 0.02em; }
