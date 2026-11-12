@@ -57,17 +57,8 @@ window.PROJECTS = [
         "org": "Dawon Asset Management",
         "date": "2025.02 &ndash; 04",
         "team": "2 people",
-        "thumb": "images/projects/quant-research/thumb.png",
-        "gallery": [
-            "images/projects/quant-research/01.jpg",
-            "images/projects/quant-research/02.jpg",
-            "images/projects/quant-research/03.jpg",
-            "images/projects/quant-research/04.jpg",
-            "images/projects/quant-research/05.jpg",
-            "images/projects/quant-research/06.jpg",
-            "images/projects/quant-research/07.jpg",
-            "images/projects/quant-research/08.jpg"
-        ],
+        "thumb": "images/projects/quant-research/overview.jpg",
+        "gallery": [],
         "features": [
             "Rebuilt 25 years of KOSPI and KOSDAQ data &mdash; roughly 300 million rows &mdash; into a MySQL and Python ETL pipeline",
             "Implemented factor scoring and backtesting logic for the portfolio strategy",
@@ -269,9 +260,9 @@ window.PROJECTS = [
         "org": "CUAI, Chung-Ang University AI Society",
         "date": "2024.11",
         "team": "Solo",
-        "thumb": "images/projects/hai-anomaly/01.jpg",
+        "thumb": "images/projects/hai-anomaly/02.jpg",
         "gallery": [
-            "images/projects/hai-anomaly/02.jpg"
+            "images/projects/hai-anomaly/01.jpg"
         ],
         "features": [
             "Built autoencoder models for time-series anomaly detection on the HAI (HIL-based Augmented ICS) security dataset",
