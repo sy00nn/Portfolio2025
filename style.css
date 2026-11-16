@@ -931,12 +931,56 @@ body {
     border-top: 1px solid var(--hairline);
 }
 
+/* optional one-paragraph summary above the Role / Action / Impact list */
+.project-detail-summary {
+    max-width: 62ch;
+    margin: 22px 0 0;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    color: var(--body);
+}
+
 .project-detail-links {
     display: flex;
     flex-wrap: wrap;
     gap: 8px 20px;
     margin-top: 22px;
     font-size: 0.95rem;
+}
+
+/* click the main image to view it large */
+img.project-detail-image { cursor: zoom-in; }
+
+.lightbox {
+    border: 0;
+    padding: 0;
+    background: none;
+    max-width: 96vw;
+    max-height: 96vh;
+    cursor: zoom-out;
+}
+
+.lightbox::backdrop { background: rgba(17, 17, 17, 0.8); }
+
+.lightbox img {
+    display: block;
+    max-width: 96vw;
+    max-height: 96vh;
+}
+
+/* image note: pinned to the bottom of the visible media column, level with the strip's end */
+.project-detail-media:has(.project-detail-note) {
+    display: flex;
+    flex-direction: column;
+    min-height: var(--panel-visible);
+}
+
+.project-detail-note {
+    margin: auto 0 0;
+    padding-top: 12px;
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--muted);
 }
 
 /* image stays in view while the copy scrolls */
@@ -994,12 +1038,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar) transparent;
+    /* no bar of its own: it would sit right beside the panel's scrollbar */
+    scrollbar-width: none;
 }
 
-.project-detail-strip::-webkit-scrollbar { width: 6px; }
-.project-detail-strip::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 999px; }
+.project-detail-strip::-webkit-scrollbar { display: none; }
 
 .project-detail-thumb {
     flex: 0 0 auto;
@@ -1324,6 +1367,10 @@ body {
         max-height: none;
     }
 
+    .project-detail-media:has(.project-detail-note) {
+        min-height: 0;
+    }
+
     .project-detail-media.is-tall {
         max-height: none;
         overflow: visible;
@@ -1435,5 +1482,7 @@ body {
 /* Korean: break lines between words, not inside them; no synthetic italic */
 html:lang(ko) body { word-break: keep-all; }
 html:lang(ko) .hero-tagline { font-style: normal; }
+/* Korean contact copy is the heading alone; this line is English-only */
+html:lang(ko) .contact-line { display: none; }
 /* all-caps reads larger than mixed-case menu labels at the same size */
 .lang-btn { font-size: 0.86rem; letter-spacing: 0.02em; }

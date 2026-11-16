@@ -11,26 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <meta name="description" content="Seoyoon Park — Data-minded AI Product Builder. I turn user context into AI products.">
+    <meta name="description" content="Seoyoon Park | Product Builder">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://parkseoyoon.netlify.app/">
-    <meta property="og:title" content="Seoyoon Park — Data-minded AI Product Builder">
-    <meta property="og:description" content="I turn user context into AI products.">
+    <meta property="og:title" content="Seoyoon Park | Product Builder">
     <meta property="og:image" content="https://parkseoyoon.netlify.app/images/IMG_ME.JPG">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Seoyoon Park — Data-minded AI Product Builder">
-    <meta name="twitter:description" content="I turn user context into AI products.">
+    <meta name="twitter:title" content="Seoyoon Park | Product Builder">
     <meta name="twitter:image" content="https://parkseoyoon.netlify.app/images/IMG_ME.JPG">
 </head>
 <body>
 <main class="page">
     <header class="topbar">
         <h1 class="brand">
-            <button class="brand-btn active" data-tab="home" type="button">Seoyoon Park</button>
+            <button class="brand-btn active" data-tab="home" type="button">Undefined</button>
         </h1>
 
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
@@ -70,9 +68,8 @@
                 </a>
             </div>
 
-            <p class="body-copy hero-copy" data-ko="&lt;span class=&quot;hero-tagline&quot;&gt;Data로 사고하고, AI로 사용자의 맥락에 맞게 문제를 해결하는 &lt;strong&gt;&lt;em&gt;Product Builder&lt;/em&gt;&lt;/strong&gt; 박서윤입니다.&lt;/span&gt;">
-                <span class="hero-tagline">Data-minded AI Product Builder.</span><br>
-                With a background in Business and Cybersecurity, I am passionate about turning user context into AI products.
+            <p class="body-copy hero-copy" data-ko="&lt;span class=&quot;hero-tagline&quot;&gt;사용자의 맥락을 이해하고 데이터로 문제를 해결하는 &lt;em&gt;Product Builder&lt;/em&gt; 박서윤입니다.&lt;/span&gt;">
+                <span class="hero-tagline">AI Product Builder who understands users&rsquo; context, structures the problem, and solves it with data.</span>
             </p>
             <p class="body-copy hero-copy" data-ko="다양한 사람들과 생각을 나누는 것을 좋아하며, 새로운 분야에 도전하고 배우는 과정에 열정을 쏟고 있습니다.">
                 Beyond code, I am a lifelong learner, traveler, and connector who thrives on new ideas and meaningful insights.
@@ -103,7 +100,7 @@
                     <article class="info-item">
                         <h3 class="info-title" data-ko="다원자산운용(주) 자산운용본부">Dawon Asset Management, Asset Management Division</h3>
                         <p class="info-subtitle">Product Engineer</p>
-                        <p class="info-period">2026.03 &ndash; Present</p>
+                        <p class="info-period" data-ko="2026.03 &ndash; 현재">2026.03 &ndash; Present</p>
                     </article>
                     <article class="info-item">
                         <h3 class="info-title" data-ko="(주)뤼튼테크놀로지스 AX팀">Wrtn Technologies, AX Team</h3>
@@ -257,9 +254,9 @@
 
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="panel contact-panel" aria-label="Contact">
-        <h2 class="contact-title contact-intro" data-ko="언제든 편하게 연락 주세요!">Always open to connecting!</h2>
+        <h2 class="contact-title contact-intro" data-ko="커피챗, 협업 등을 환영합니다 !&lt;br&gt;언제든 편하게 연락 주세요 ;)">Always open to connecting!</h2>
         <div class="contact-copy">
-            <p class="contact-line" data-ko="커피챗, 채용, 협업 등 무엇이든 편하게 연락 주세요 ;)">
+            <p class="contact-line">
                 coffee chats, roles, collaborations, or anything in between,
                 feel free to reach me out ;)
             </p>
@@ -277,7 +274,8 @@
 </main>
 
 <script src="projects.js"></script>
-<script>
+<dialog id="lightbox" class="lightbox" aria-label="Enlarged image"><img src="" alt=""></dialog>
+    <script>
 (function () {
     'use strict';
 
@@ -450,17 +448,40 @@
                     '<h2 class="project-detail-title">' + t(p, 'title') + '</h2>' +
                     '<p class="project-detail-meta">' + t(p, 'org') + '</p>' +
                     '<p class="project-detail-period">' + [p.date, teamLabel(p.team)].filter(Boolean).join(' &middot; ') + '</p>' +
+                    (t(p, 'summary') ? '<p class="project-detail-summary">' + t(p, 'summary') + '</p>' : '') +
                     '<ul class="project-features">' + t(p, 'features').map(function (f) { return '<li>' + f + '</li>'; }).join('') + '</ul>' +
-                    (p.tags && p.tags.length ? '<ul class="project-tags">' + p.tags.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' : '') +
                     (links ? '<div class="project-detail-links">' + links + '</div>' : '') +
+                    (p.tags && p.tags.length ? '<ul class="project-tags">' + p.tags.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' : '') +
                 '</div>' +
-                '<div class="project-detail-media">' + media + '</div>' +
+                '<div class="project-detail-media">' + media + (p.note ? '<p class="project-detail-note">' + t(p, 'note') + '</p>' : '') + '</div>' +
                 strip +
             '</div>';
     }
 
     // gallery strip: swap the main image
+    var lightbox = document.getElementById('lightbox');
+    lightbox.addEventListener('click', function () { lightbox.close(); });
+    // arrow keys step through the gallery (stops at either end); the strip stays in sync
+    lightbox.addEventListener('keydown', function (e) {
+        var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        var thumbs = detail.querySelectorAll('.project-detail-thumb');
+        if (!step || !thumbs.length) return;
+        e.preventDefault();
+        var i = Array.prototype.indexOf.call(thumbs, detail.querySelector('.project-detail-thumb.active'));
+        var next = thumbs[i + step];
+        if (!next) return;   // first or last image: stay put
+        next.click();
+        next.scrollIntoView({ block: 'nearest' });
+        lightbox.firstElementChild.src = next.dataset.src;
+    });
+
     detail.addEventListener('click', function (e) {
+        // main image: open it large; any click or Esc closes
+        if (e.target.matches('img.project-detail-image')) {
+            lightbox.firstElementChild.src = e.target.src;
+            lightbox.showModal();
+            return;
+        }
         var btn = e.target.closest('.project-detail-thumb');
         if (!btn) return;
         document.getElementById('project-detail-image').src = btn.dataset.src;
