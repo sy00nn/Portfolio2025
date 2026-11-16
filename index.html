@@ -239,7 +239,8 @@
             <button class="filter-btn active" data-filter="all" type="button">All</button>
             <button class="filter-btn" data-filter="professional" type="button">Work</button>
             <button class="filter-btn" data-filter="competitions" type="button">Competitions</button>
-            <button class="filter-btn" data-filter="personal" type="button">Personal</button>
+            <!-- hidden while every personal project is hidden in projects.js; restore with them -->
+            <!-- <button class="filter-btn" data-filter="personal" type="button">Personal</button> -->
         </div>
 
         <div class="project-list" id="project-list"></div>
@@ -282,7 +283,7 @@
     var TABS = ['home', 'about', 'awards', 'projects', 'contact'];
     /* hashes used by the previous version of the site, kept so old links resolve */
     var ALIASES = { journey: 'about' };
-    var PROJECTS = window.PROJECTS || [];
+    var PROJECTS = (window.PROJECTS || []).filter(function (p) { return !p.hidden; });
     var PROJECTS_KO = window.PROJECTS_KO || {};
 
     /* ---- language: EN is the authored copy; KO swaps content only ---- */

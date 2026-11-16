@@ -3,6 +3,7 @@
 
    One entry per project, in display order:
      slug        URL id → #project/<slug>, and the image folder name
+     hidden      optional; true hides the project from the list and its detail page
      shortTitle  image alt text and the placeholder card label
      title       full title (list item and detail-page heading)
      category    professional | competitions | personal   (drives the filter)
@@ -166,15 +167,15 @@ window.PROJECTS = [
     },
     {
         "slug": "used-car-price",
+        "hidden": true,
         "shortTitle": "Used Car Pricing",
         "title": "US Used Car Price Prediction",
         "category": "competitions",
         "org": "Grand Prize, CUAI &amp; DArt-B Kaggle Datathon",
         "date": "2024.11",
         "team": "4 people",
-        "thumb": "images/projects/used-car-price/thumb.jpg",
+        "thumb": "images/projects/used-car-price/01.jpg",
         "gallery": [
-            "images/projects/used-car-price/01.jpg",
             "images/projects/used-car-price/02.jpg",
             "images/projects/used-car-price/03.jpg"
         ],
@@ -248,6 +249,7 @@ window.PROJECTS = [
     },
     {
         "slug": "onchain-tracing",
+        "hidden": true,
         "shortTitle": "On-Chain Tracing",
         "title": "On-Chain Tracing of WannaCry Ransom Funds",
         "category": "competitions",
@@ -280,6 +282,7 @@ window.PROJECTS = [
     },
     {
         "slug": "dpfl-fusion",
+        "hidden": true,
         "shortTitle": "DPFL-FUSION",
         "title": "DPFL-FUSION: SHAP-Optimized Noise Generation",
         "category": "competitions",
@@ -316,6 +319,7 @@ window.PROJECTS = [
     },
     {
         "slug": "hai-anomaly",
+        "hidden": true,
         "shortTitle": "HAI Anomaly Detection",
         "title": "Anomaly Detection on the HAI Security Dataset",
         "category": "personal",
@@ -351,6 +355,7 @@ window.PROJECTS = [
     },
     {
         "slug": "kcontent-nlp",
+        "hidden": true,
         "shortTitle": "K-Content NLP",
         "title": "K-Content Review NLP &amp; Topic Modeling",
         "category": "personal",
