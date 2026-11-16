@@ -75,7 +75,7 @@ window.PROJECTS = [
             "<strong>Role</strong> Planning, crawling and API data pipelines, agent design and development, and web UX/UI development",
             "<strong>Action</strong> Mapped the newsroom workflow and structured it into six AI agents: topic recommendation, research, drafting in each reporter&rsquo;s style learned from their recent articles, headline and subhead generation, copy review, and article recommendation by readers&rsquo; gender and age",
             "<strong>Action</strong> Built a LangGraph multi-agent workflow, applying prompt engineering and few-shot examples for consistent outputs",
-            "<strong>Impact</strong> The drafting agent&rsquo;s architecture was used for a government press-release agent, contributing to the contract win"
+            "<strong>Impact</strong> The drafting agent&rsquo;s architecture was used as the core of a government press-release agent, contributing to the contract win"
         ],
         "links": [
             {
@@ -102,11 +102,14 @@ window.PROJECTS = [
         "team": "2 people",
         "thumb": "images/projects/quant-research/overview.jpg",
         "gallery": [],
+        "summary": "25 years of KOSPI and KOSDAQ market and financial data (about 300 million rows) sat in scattered Excel files. I moved it into a database and built a backtesting environment to test factors for a CSSP private fund.",
         "features": [
-            "<strong>Role</strong> Built the data foundation and backtests for factor research on a CSSP private fund, whose 25 years of KOSPI and KOSDAQ market and financial data (about 300 million rows) sat in scattered Excel files",
-            "<strong>Action</strong> Rebuilt it into a MySQL database through a Python ETL pipeline: wide-to-long reshaping, column standardisation, and chunked loading",
-            "<strong>Action</strong> Implemented factor scoring and quintile backtests in SQL, with 1, 3, and 6-month rebalancing, beta-neutral long&ndash;short returns, and IC, plus a performance dashboard",
-            "<strong>Impact</strong> Top quintile returned 22.1% annualised against 7.1% for the KOSPI (IC 0.182); contributed to a 3.9% average excess return (Jul 2025) and a 60% cut in compute time"
+            "<strong>Role</strong> Data pipeline design and database build, factor scoring, backtesting and performance analysis, and dashboard visualisation",
+            "<strong>Action</strong> Moved the Excel data into MySQL through a Python ETL pipeline: wide-to-long reshaping, column standardisation, and chunked loading",
+            "<strong>Action</strong> Implemented factor scoring and quintile backtests in SQL, with 1, 3, and 6-month rebalancing, beta-neutral long&ndash;short returns, and IC analysis",
+            "<strong>Action</strong> Visualised the backtest results in a dashboard-style report",
+            "<strong>Impact</strong> Cut compute time 60% by moving Excel-based work onto the database",
+            "<strong>Impact</strong> Top quintile returned 22.1% annualised against 7.1% for the KOSPI (IC 0.182), contributing to a 3.9% average fund excess return (Jul 2025)"
         ],
         "links": [],
         "tags": [
@@ -129,11 +132,13 @@ window.PROJECTS = [
         "team": "2 people",
         "thumb": "images/projects/rider-safety/poster.jpg",
         "gallery": [],
+        "summary": "Delivery rider accidents keep rising, yet only about 1 in 10 riders who have an accident ends up compensated through workers&rsquo; injury insurance. To close that gap, I planned an AI service that predicts injury severity in an accident and guides riders through the claim process.",
         "features": [
-            "<strong>Role</strong> Built an injury-severity model and a service around it, so that platform delivery riders facing rising accident rates could see their risk in advance and get help with injury claims afterwards",
-            "<strong>Action</strong> Ran EDA on three years of Seoul motorcycle accident data and built an XGBoost model that predicts injury severity",
-            "<strong>Action</strong> Combined the model with the OpenAI API to deliver real-time risk warnings and post-accident injury-claim guidance",
-            "<strong>Impact</strong> Reached 96% accuracy and F1-score, and received the Outstanding Research Award"
+            "<strong>Role</strong> Problem definition and service planning, accident data collection and preprocessing, EDA, ML prediction modelling, and injury-claim alerts built on the ChatGPT API",
+            "<strong>Action</strong> Collected 14,944 Seoul motorcycle accident records (2021&ndash;2023), bucketed age and time of day, and ran EDA by time, district, road type, and traffic violation",
+            "<strong>Action</strong> Tuned and compared seven ML models, chose XGBoost, and used feature importance to surface the main risk factors",
+            "<strong>Action</strong> Fed the predicted injury severity into a ChatGPT prompt that texts the rider the required documents, how to find a designated hospital, and the claim steps",
+            "<strong>Impact</strong> Reached 96.5% accuracy and an F1-score of 0.96, and received the Outstanding Research Award"
         ],
         "links": [
             {
@@ -173,11 +178,13 @@ window.PROJECTS = [
             "images/projects/used-car-price/02.jpg",
             "images/projects/used-car-price/03.jpg"
         ],
+        "summary": "In a Kaggle datathon predicting US used-car prices from cars.com listings, whose engine, transmission, and colour fields were written in no standard form, I turned those raw fields into features the model can easily learn from and analysed what drives price.",
         "features": [
-            "<strong>Role</strong> Problem definition, EDA, and feature engineering for a Kaggle datathon predicting US used-car prices from cars.com listings whose engine, transmission, and colour fields were not standardised",
-            "<strong>Action</strong> Ran EDA on price formation by brand, model year, and mileage; cleaned the raw fields into model-ready features",
-            "<strong>Action</strong> Stacked and ensembled models with AutoGluon",
-            "<strong>Impact</strong> Improved prediction performance 20% and won the Grand Prize; identified mileage, model, and release year as the core price drivers, with a distinct premium on retro cars"
+            "<strong>Role</strong> Problem definition, EDA, preprocessing and feature engineering, and insight analysis",
+            "<strong>Action</strong> Standardised engine, transmission, and colour data and rebuilt them into horsepower, displacement, transmission type, and colour-combination features",
+            "<strong>Action</strong> Built a stacking ensemble of ML models (RF, LightGBM, XGBoost, CatBoost, and more) with AutoGluon to predict price",
+            "<strong>Action</strong> Used EDA and statistical tests to identify mileage, model, and release year as the core price drivers, and found a price premium on 1990s retro cars",
+            "<strong>Impact</strong> Improved prediction performance 20% and won the Grand Prize"
         ],
         "links": [
             {
@@ -207,10 +214,12 @@ window.PROJECTS = [
             "images/projects/sanjae-mate/02.jpg",
             "images/projects/sanjae-mate/03.jpg"
         ],
+        "summary": "Injured workers under-use industrial injury insurance because filing is complex and information on hospitals and rehabilitation is hard to find. To fix that, I planned an all-in-one app that supports workers from prevention through filing, approval, and rehabilitation.",
         "features": [
-            "<strong>Role</strong> Service planning and data features for an all-in-one industrial-injury service, since injured workers under-use the insurance: filing is complex and slow, and information on designated hospitals and rehabilitation is scattered",
-            "<strong>Action</strong> Defined the user problem across prevention, filing, approval, and rehabilitation, and scoped an all-in-one service on KCOMWEL and Ministry of Employment and Labor open data",
-            "<strong>Action</strong> Connected the public datasets into three features: a geocoded map of designated hospitals and rehab centres, crawled hospital reviews summarised with the ChatGPT API, and an accident-type model trained on 107,180 records",
+            "<strong>Role</strong> Problem definition and service planning, public data collection and preprocessing, web crawling, ML prediction modelling, and review summaries built on the ChatGPT API",
+            "<strong>Action</strong> Converted the addresses of designated hospitals and vocational rehab centres into coordinates and mapped them",
+            "<strong>Action</strong> Crawled hospital reviews from Kakao Map with Selenium and summarised the latest ones with the ChatGPT API",
+            "<strong>Action</strong> Trained an ML model on 107,180 accident records that predicts the most likely accident type from age, industry, and tenure",
             "<strong>Impact</strong> Delivered a working prototype and app design, and received an Honorable Mention"
         ],
         "links": [
@@ -249,11 +258,13 @@ window.PROJECTS = [
         "gallery": [
             "images/projects/onchain-tracing/02.jpg"
         ],
+        "summary": "The 2017 WannaCry attack infected over 200,000 computers across 150 countries. Using on-chain transaction records, I traced how the bitcoin ransom paid by victims was laundered and cashed out.",
         "features": [
-            "<strong>Role</strong> Traced the ransom from the 2017 WannaCry attack (200,000+ computers across 150 countries) for a competition, from setting the tracing scope to mapping the laundering path",
-            "<strong>Action</strong> Applied entity resolution and link analysis in Chainalysis Reactor: clustered ransom addresses for versions 1.0 and 2.0 into entities and traced their fund flows",
+            "<strong>Role</strong> Setting the tracing scope, on-chain fund-flow analysis, and laundering-method analysis",
+            "<strong>Action</strong> Clustered the ransom addresses of versions 1.0 and 2.0 in Chainalysis Reactor and followed their outgoing transactions",
+            "<strong>Action</strong> Traced funds through ShapeShift and Changelly into Monero, and followed the rest as it was split into small amounts and sent to several exchanges and P2P trades",
             "<strong>Action</strong> Structured the laundering process into four steps: chain-hopping, conversion to Monero, splitting into small amounts, and cash-out through low-KYC exchanges",
-            "<strong>Impact</strong> Mapped about 4.7 BTC (1.0) and 52 BTC (2.0) from ransom wallets through ShapeShift and Changelly into Monero, and placed 3rd"
+            "<strong>Impact</strong> Mapped how about 4.7 BTC (1.0) and 52 BTC (2.0) were converted into Monero, and placed 3rd"
         ],
         "links": [
             {
@@ -277,10 +288,12 @@ window.PROJECTS = [
         "team": "4 people",
         "thumb": "images/projects/dpfl-fusion/thumb.jpg",
         "gallery": [],
+        "summary": "Applying differential privacy (DP) in federated learning adds the same noise to every feature, which hurts model accuracy. To fix that, we proposed a framework that scales the noise on each feature by its SHAP importance.",
         "features": [
-            "<strong>Role</strong> Set the research direction for reducing the accuracy cost of differential privacy in federated learning, where uniform noise on every feature degrades the model",
-            "<strong>Action</strong> Hypothesised that scaling noise per feature by SHAP importance through continuous mapping functions, with total noise energy fixed, keeps the DP guarantee while protecting accuracy",
-            "<strong>Action</strong> Added zero-valued fake features to absorb noise away from important features, and analysed the privacy&ndash;performance tradeoff on MNIST",
+            "<strong>Role</strong> Research direction and hypothesis, noise-allocation design, and MNIST experiments and analysis",
+            "<strong>Action</strong> Measured feature importance with SHAP, giving important features less noise and unimportant ones more",
+            "<strong>Action</strong> Spread the noise with continuous mapping functions (exponential, reciprocal, sigmoid) while keeping total noise energy fixed, so the DP guarantee holds",
+            "<strong>Action</strong> Added zero-valued fake features to absorb noise in place of real ones, and analysed the privacy&ndash;performance tradeoff on MNIST",
             "<strong>Impact</strong> Outperformed a prior adaptive DP method (Talaei, 2024) under the same DP guarantee, and won the Grand Prize"
         ],
         "links": [
@@ -313,11 +326,13 @@ window.PROJECTS = [
         "gallery": [
             "images/projects/hai-anomaly/01.jpg"
         ],
+        "summary": "To catch the rare attack periods in HAI, a time-series dataset from a testbed that mimics a power plant&rsquo;s industrial control system (ICS), I built an autoencoder that learns normal patterns and flags anomalies.",
         "features": [
-            "<strong>Role</strong> Built an attack detection model on the HAI industrial control system dataset, a large-scale time series where attack points are rare",
-            "<strong>Action</strong> Built the preprocessing pipeline: missing value handling, scaling, feature generation, and SMOTE for class imbalance",
-            "<strong>Action</strong> Trained autoencoders that flag anomalies by reconstruction error, tuning hyperparameters with Optuna and the error threshold separately",
-            "<strong>Impact</strong> Reached a TaPR of 0.53"
+            "<strong>Role</strong> Data preprocessing, deep learning modelling, and hyperparameter optimisation",
+            "<strong>Action</strong> Built skewness features from the mean, standard deviation, and median across about 550,000 rows; dropped columns with missing values and normalised with RobustScaler",
+            "<strong>Action</strong> Corrected the class imbalance of rare attack periods with SMOTE",
+            "<strong>Action</strong> Tuned a reconstruction-error autoencoder with Optuna, and compared 95%, 98%, and dynamic thresholds to set the anomaly cut-off",
+            "<strong>Impact</strong> Reached a TaPR (time-series anomaly detection metric) of 0.53"
         ],
         "links": [
             {
@@ -346,11 +361,12 @@ window.PROJECTS = [
         "gallery": [
             "images/projects/kcontent-nlp/topics.jpg"
         ],
+        "summary": "To understand viewer reactions to hit K-content in more depth than star ratings allow, I analysed review text with topic modelling and turned the results into marketing insights.",
         "features": [
-            "<strong>Role</strong> Analysed audience reviews to find what viewers valued in hit K-content, which star ratings alone do not show, as input for marketing and follow-up planning",
-            "<strong>Action</strong> Crawled about 2,000 audience reviews of <em>Lovely Runner</em> and <em>Exhuma</em> with Selenium, then cleaned them and extracted nouns with Mecab-ko and TF-IDF",
-            "<strong>Action</strong> Ran LDA with the topic count chosen by coherence score (26 topics) and visualized topic relationships in pyLDAvis",
-            "<strong>Impact</strong> Surfaced each title&rsquo;s core appeal: story immersion, character appeal, and emotional response for <em>Lovely Runner</em>; suspense, mise-en-sc&egrave;ne, and acting for <em>Exhuma</em>"
+            "<strong>Role</strong> Review data crawling and preprocessing, keyword extraction, LDA topic modelling, and visualisation",
+            "<strong>Action</strong> Crawled about 2,000 audience reviews of <em>Lovely Runner</em> and <em>Exhuma</em> with Selenium",
+            "<strong>Action</strong> Cleaned the review data and extracted key nouns with TF-IDF, then summarised them in word clouds",
+            "<strong>Action</strong> Chose 26 topics by coherence score, ran LDA, and visualised how the topics relate in pyLDAvis"
         ],
         "links": [
             {
@@ -370,7 +386,7 @@ window.PROJECTS = [
     }
 ];
 
-/* Korean copy for the KO toggle, keyed by slug. Only title, org, and features
+/* Korean copy for the KO toggle, keyed by slug. Only title, org, summary, features, and note
    change; dates, tags, links, and images are shared with the English entry. */
 window.PROJECTS_KO = {
     "fund-ops": {
@@ -378,7 +394,7 @@ window.PROJECTS_KO = {
         "org": "다원자산운용(주) 자산운용본부",
         "summary": "펀드운용팀의 일일 반복 업무를 데이터 수집부터 REPO·담보 계산, 컴플라이언스 점검, 운용지시서 생성까지 자동화하고, 팀이 실시간으로 함께 보고 검증하는 33개 펀드 통합관리 웹 시스템을 구축했습니다.",
         "features": [
-            "<strong>Role</strong> 업무 분석 및 기획, 수탁사·백오피스 데이터 파이프라인, AWS 인프라 구축, Web UX/UI 디자인 및 개발, 배포·운영",
+            "<strong>Role</strong> 업무 워크플로우 구조화 및 시스템 기획, 백오피스 데이터 파이프라인 및 AWS 인프라 구축, Web UX/UI 디자인 및 개발, 배포·운영",
             "<strong>Action</strong> 자산 운용 업무의 워크플로우 구조화를 통해 일일 펀드 회계 처리 내역, 채권 주문, REPO 거래, 컴플라이언스 업무를 자동화하고 운용지시서·엑셀 파일 자동 생성 기능 구현",
             "<strong>Action</strong> 수탁사·백오피스 일일 파일 자동 수집, 행 단위 검증, 오류 행 사유별 분리 및 재시도 파이프라인 구축으로 확인이 필요한 파일·행을 즉시 식별",
             "<strong>Action</strong> 자본시장법 규제 한도 점검을 자동화해 운용역과 컴플라이언스가 동일한 실시간 화면을 보고, 매매 전 근접·위반 펀드를 사전 탐지",
@@ -396,87 +412,103 @@ window.PROJECTS_KO = {
             "<strong>Role</strong> 기획, 웹 크롤링·API 기반 데이터 수집 파이프라인, Agent 설계 및 개발, Web UX/UI 개발",
             "<strong>Action</strong> 기사 생산 과정의 워크플로우를 6개 에이전트 역할로 구조화하여 기획: 주제 생성, 리서치, 기자 문체를 학습한 초안 작성, 제목·부제 생성, 윤문, 독자 성별·연령별 기사 추천",
             "<strong>Action</strong> LangGraph 기반 Multi-Agent Workflow를 설계하고, 출력 일관성을 위해 Prompt Engineering 및 Few-shot 적용",
-            "<strong>Impact</strong> 기사 초안 작성 에이전트 아키텍처가 정부기관 보도자료 작성 에이전트에 사용되어 계약 수주에 기여"
+            "<strong>Impact</strong> 기사 초안 작성 에이전트 아키텍처가 정부기관 보도자료 작성 에이전트의 핵심 구조로 사용되어 계약 수주에 기여"
         ]
     },
     "quant-research": {
         "title": "CSSP 사모펀드 퀀트 리서치 분석",
         "org": "다원자산운용(주) 자산운용본부",
+        "summary": "엑셀 파일로 흩어져 있던 KOSPI·KOSDAQ 25년치 시장·재무 데이터(약 3억 건)를 DB로 전환하고, CSSP 사모펀드 운용에 쓸 팩터를 검증하는 백테스트 환경을 구축했습니다.",
         "features": [
-            "<strong>Role</strong> CSSP 사모펀드 팩터 리서치를 위해 엑셀로 관리되던 KOSPI·KOSDAQ 25년, 약 3억 건 시계열 데이터의 DB 전환 및 백테스트 환경 구축",
-            "<strong>Action</strong> Python ETL(Wide→Long 변환, 컬럼 표준화, 분할 적재)을 통해 MySQL 중심 데이터 파이프라인으로 재설계",
-            "<strong>Action</strong> 팩터 스코어링 및 5분위 백테스트를 SQL로 구현(월·분기·반기 리밸런싱, 베타 중립 롱숏, IC)하고 대시보드형 레포트로 시각화",
-            "<strong>Impact</strong> 1분위 연환산 수익률 22.1%(KOSPI 7.1%), IC 0.182 확인 → 연산 속도 60% 단축, 평균 3.9% 펀드 초과수익률(&rsquo;25.07) 기여"
+            "<strong>Role</strong> 데이터 파이프라인 설계 및 DB 구축, 팩터 스코어링, 백테스트 및 성과 분석, 대시보드 시각화",
+            "<strong>Action</strong> Python ETL(Wide→Long 변환, 컬럼 표준화, 분할 적재)로 엑셀 데이터를 MySQL DB로 전환",
+            "<strong>Action</strong> 팩터 스코어링과 5분위 백테스트를 SQL로 구현(월·분기·반기 리밸런싱, 베타 중립 롱숏, IC 분석)",
+            "<strong>Action</strong> 백테스트 성과를 대시보드형 리포트로 시각화",
+            "<strong>Impact</strong> 엑셀 기반 작업을 DB로 전환해 연산 속도 60% 단축",
+            "<strong>Impact</strong> 1분위 연환산 수익률 22.1%(KOSPI 7.1%)·IC 0.182 확인, 펀드 평균 3.9% 초과수익률(&rsquo;25.07) 기여"
         ]
     },
     "rider-safety": {
         "title": "플랫폼 배달 라이더를 위한 AI 예측 서비스",
         "org": "제33회 중앙대학교 인공지능인문학 국내학술대회 연구우수상",
+        "summary": "배달 라이더 사고는 늘고 있지만 사고를 겪은 라이더 10명 중 1명만 산재 보상을 받는 문제를 해결하기 위해, 사고 시 상해 정도를 예측하고 산재 신청 절차를 안내하는 AI 서비스를 기획했습니다.",
         "features": [
-            "<strong>Role</strong> 증가하는 플랫폼 배달 라이더 사고에 대응해, 사전 위험 인지와 사고 후 산재 신청을 돕는 부상 심각도 예측 모델 및 서비스 구축",
-            "<strong>Action</strong> 서울시 이륜차 사고 3개년 데이터 EDA 및 XGBoost 기반 부상 심각도 예측 모델 구축",
-            "<strong>Action</strong> 예측 모델과 OpenAI API를 연계해 실시간 위험 알림 및 사고 후 산재 신청 안내 기능 구현",
-            "<strong>Impact</strong> 정확도·F1-score 96% 달성, 연구우수상 수상"
+            "<strong>Role</strong> 문제 정의 및 서비스 기획, 사고 데이터 수집·전처리, EDA, ML 예측 모델링, ChatGPT API 기반 산재 안내 알림 구현",
+            "<strong>Action</strong> 서울시 이륜차 사고 14,944건(2021–2023) 수집, 연령·시간대 범주화, 시간대·지역·도로형태·법규위반별 EDA",
+            "<strong>Action</strong> ML 모델 7개를 튜닝하며 비교해 XGBoost를 최종 선정하고, Feature Importance로 주요 위험 요인 도출",
+            "<strong>Action</strong> 예측된 상해 정도를 ChatGPT 프롬프트에 연동해 필요 서류·지정 의료기관 찾는 법·행정 절차를 문자로 자동 안내",
+            "<strong>Impact</strong> 정확도 96.5%·F1-score 0.96 달성, 연구우수상 수상"
         ]
     },
     "used-car-price": {
         "title": "미국 중고차 가격 예측",
         "org": "CUAI X DArt-B Kaggle 데이터톤, 대상",
+        "summary": "cars.com 미국 중고차 매물 데이터로 가격을 예측하는 Kaggle 데이터톤에서, 비정형 속성을 모델이 학습하기 용이한 피처로 정제하고 가격 결정 요인을 분석했습니다.",
         "features": [
-            "<strong>Role</strong> cars.com 매물 기반 중고차 가격 예측 Kaggle 데이터톤에서 문제 정의·EDA·Feature 엔지니어링 담당(엔진·변속기·색상 속성이 비표준화된 데이터)",
-            "<strong>Action</strong> 브랜드·연식·주행거리 중심 가격 형성 구조 EDA, 핵심 Feature 정제 및 파생 변수 생성",
-            "<strong>Action</strong> AutoGluon 기반 모델 Stacking·Ensemble 적용",
-            "<strong>Impact</strong> 예측 성능 20% 개선 및 대상 수상. 주행거리·모델·출시 연도를 핵심 가격 요인으로 도출하고 레트로 차량 프리미엄 현상 발견"
+            "<strong>Role</strong> 문제 정의, EDA, 데이터 전처리 및 Feature Engineering, 인사이트 도출",
+            "<strong>Action</strong> 엔진·변속기·색상 데이터 정형화 및 마력·배기량·변속기 유형·색상 조합 피처로 재구성",
+            "<strong>Action</strong> AutoGluon으로 여러 ML 모델(RF·LightGBM·XGBoost·CatBoost 등)을 Stacking Ensemble해 가격 예측",
+            "<strong>Action</strong> EDA와 통계 검정으로 주행거리·모델·출시 연도를 핵심 가격 요인으로 도출하고, 1990년대 레트로 차량의 가격 프리미엄 현상 발견",
+            "<strong>Impact</strong> 예측 성능 20% 개선 및 대상 수상"
         ]
     },
     "sanjae-mate": {
         "title": "산재메이트: 산재 신청 올인원 AI 서비스",
         "org": "안전한 데이터 활용 분야 특허 공모전, 장려상",
+        "summary": "복잡한 신청 절차와 병원·재활 정보 부족으로 산재보험 이용률이 낮은 문제를 해결하기 위해, 산재 예방부터 신청·승인·재활까지 한 곳에서 돕는 올인원 앱 서비스를 기획했습니다.",
         "features": [
-            "<strong>Role</strong> 복잡한 신청 절차·긴 처리 기간·지정 병원·재활 정보 부족으로 저조한 산재보험 이용률 개선을 위한 올인원 서비스 기획 및 데이터 기능 구현",
-            "<strong>Action</strong> 예방–신청–승인–재활 단계별 사용자 문제 정의 및 근로복지공단·고용노동부 공공 데이터 기반 올인원 서비스 기획",
-            "<strong>Action</strong> 공공 데이터를 3개 기능으로 연결: 지정의료기관·재활기관 지도 시각화, 병원 리뷰 크롤링 및 ChatGPT API 요약, 107,180건 데이터 기반 재해유형 예측 모델",
+            "<strong>Role</strong> 문제 정의 및 서비스 기획, 공공 데이터 수집·전처리, 웹 크롤링, ML 예측 모델링, ChatGPT API 기반 리뷰 요약 구현",
+            "<strong>Action</strong> 산재 지정의료기관·직업재활기관 주소를 위경도로 변환해 지도 시각화",
+            "<strong>Action</strong> 카카오맵 병원 리뷰를 Selenium으로 크롤링하고 ChatGPT API로 최신 리뷰 요약",
+            "<strong>Action</strong> 사고재해 데이터 107,180건으로 연령·업종·근속기간별 발생 가능성이 높은 재해 유형 ML 예측 모델 구축",
             "<strong>Impact</strong> 서비스 프로토타입 및 앱 설계 완성, 특허 공모전 장려상 수상"
         ]
     },
     "onchain-tracing": {
         "title": "WannaCry 랜섬웨어 자금 온체인 추적",
         "org": "가상자산 추적 실전대회, 장려상",
+        "summary": "2017년 150개국 20만 대 이상의 컴퓨터를 감염시킨 WannaCry 랜섬웨어 공격에서, 피해자들이 지불한 비트코인 몸값이 어떻게 세탁·현금화되었는지 블록체인 거래 기록으로 추적했습니다.",
         "features": [
-            "<strong>Role</strong> 2017년 150개국 20만 대 이상을 감염시킨 WannaCry 랜섬웨어 몸값의 자금 흐름 추적(추적 범위 정의부터 세탁 경로 규명까지)",
-            "<strong>Action</strong> Chainalysis Reactor 기반 엔티티 연결 분석으로 1.0·2.0 버전 몸값 주소 클러스터링 및 자금 흐름 추적",
+            "<strong>Role</strong> 추적 범위 정의, 온체인 자금 흐름 분석, 자금 세탁 수법 분석",
+            "<strong>Action</strong> Chainalysis Reactor로 1.0·2.0 버전 몸값 주소를 클러스터링하고 지출 거래를 따라 자금 흐름 추적",
+            "<strong>Action</strong> ShapeShift·Changelly를 거쳐 Monero로 전환된 자금과, 소액으로 분할되어 여러 거래소·P2P로 송금된 자금 경로 추적",
             "<strong>Action</strong> 자금 세탁 과정을 체인호핑 → Monero 전환 → 소액 분할 → KYC 미비 거래소 현금화의 4단계로 구조화",
-            "<strong>Impact</strong> 약 4.7 BTC(1.0)·52 BTC(2.0)가 ShapeShift·Changelly를 거쳐 Monero로 전환된 경로 규명, 장려상 수상"
+            "<strong>Impact</strong> 약 4.7 BTC(1.0)·52 BTC(2.0)의 Monero 전환 경로 규명, 장려상 수상"
         ]
     },
     "dpfl-fusion": {
         "title": "DPFL-FUSION: SHAP 기반 최적 노이즈 생성",
         "org": "2024 중앙대학교 인공지능학회 CUAI 동계컨퍼런스, 대상",
+        "summary": "연합학습에 차등 프라이버시(DP)를 적용하면 모든 피처에 같은 노이즈가 더해져 모델 성능이 떨어지는 문제를 해결하기 위해, SHAP 피처 중요도에 따라 노이즈를 차등 부여하는 프레임워크를 제안했습니다.",
         "features": [
-            "<strong>Role</strong> 연합학습에 차등 프라이버시(DP) 적용 시 전체 피처에 동일 노이즈가 부여되어 발생하는 성능 저하 문제의 연구 방향 설정",
-            "<strong>Action</strong> 가설 설정: SHAP 중요도 기반 연속 매핑 함수로 피처별 노이즈를 차등 부여하고, 전체 노이즈 에너지를 유지해 DP 조건 보장",
-            "<strong>Action</strong> 값이 0인 가짜 피처를 추가해 주요 피처의 노이즈를 흡수하도록 설계, MNIST 기반 프라이버시–성능 트레이드오프 분석",
+            "<strong>Role</strong> 연구 방향 설정 및 가설 수립, 노이즈 분배 방법 설계, MNIST 실험 및 결과 분석",
+            "<strong>Action</strong> SHAP으로 피처 중요도를 산출해 중요한 피처에는 적은 노이즈, 덜 중요한 피처에는 많은 노이즈 부여",
+            "<strong>Action</strong> 지수·역수·시그모이드 등 연속 매핑 함수로 노이즈를 세밀하게 분배하고, 전체 노이즈 에너지를 유지해 DP 조건 보장",
+            "<strong>Action</strong> 값이 0인 가짜 피처를 추가해 노이즈를 대신 흡수하도록 설계하고, MNIST에서 프라이버시–성능 트레이드오프 분석",
             "<strong>Impact</strong> 동일 DP 조건에서 기존 Adaptive DP 방법(Talaei, 2024) 대비 성능 개선, 동계 컨퍼런스 대상 수상"
         ]
     },
     "hai-anomaly": {
         "title": "HAI 보안 데이터셋 이상 탐지",
         "org": "CUAI 중앙대학교 인공지능 학회",
+        "summary": "발전소 산업제어시스템(ICS)을 모사한 HAI 시계열 데이터에서 드물게 발생하는 공격 구간을 찾아내기 위해, 정상 패턴을 학습한 AutoEncoder로 이상을 탐지하는 모델을 개발했습니다.",
         "features": [
-            "<strong>Role</strong> 공격 구간이 희소한 대규모 산업제어시스템(ICS) 시계열 데이터셋(HAI) 기반 공격 탐지 모델 단독 구축",
-            "<strong>Action</strong> 결측치 처리·스케일링·Feature 생성 및 SMOTE 기반 클래스 불균형 보정 전처리 파이프라인 구축",
-            "<strong>Action</strong> 재구성 오차 기반 AutoEncoder 이상 탐지 모델링, Optuna 하이퍼파라미터 최적화 및 임계값 튜닝",
-            "<strong>Impact</strong> TaPR 0.53 달성"
+            "<strong>Role</strong> 데이터 전처리, 딥러닝 모델링 및 하이퍼파라미터 최적화",
+            "<strong>Action</strong> 약 55만 건 시계열에서 평균·표준편차·중앙값 기반 비대칭도 피처 생성, 결측 칼럼 제거 및 RobustScaler 정규화",
+            "<strong>Action</strong> SMOTE로 희소한 공격 구간의 클래스 불균형 보정",
+            "<strong>Action</strong> 재구성 오차 기반 AutoEncoder를 Optuna로 최적화하고, 95%·98%·동적 임계값을 비교해 이상 판정 기준 설정",
+            "<strong>Impact</strong> 시계열 이상 탐지 지표 TaPR 0.53 달성"
         ]
     },
     "kcontent-nlp": {
         "title": "K-콘텐츠 리뷰 NLP·토픽 모델링",
         "org": "CUAI 중앙대학교 인공지능 학회",
+        "summary": "평점보다 고도화된 흥행 K-콘텐츠의 시청자 반응을 파악하기 위해, 리뷰 텍스트를 토픽 모델링으로 분석해 마케팅 인사이트를 도출했습니다.",
         "features": [
-            "<strong>Role</strong> 평점만으로 파악하기 어려운 흥행 K-콘텐츠 관객 반응을 리뷰 텍스트로 분석해 마케팅·후속작 기획 인사이트 도출",
-            "<strong>Action</strong> Selenium 기반 〈선재 업고 튀어〉·〈파묘〉 관객 리뷰 약 2,000건 수집, Mecab-ko·TF-IDF 기반 명사 추출 및 전처리",
-            "<strong>Action</strong> Coherence 기반 토픽 수(26개) 선정 후 LDA 토픽 모델링, pyLDAvis로 토픽 간 관계 시각화",
-            "<strong>Impact</strong> 작품별 핵심 소구점 도출(〈선재 업고 튀어〉: 스토리 몰입감·캐릭터 매력·감정적 반응 / 〈파묘〉: 서스펜스·미장센·배우 연기)"
+            "<strong>Role</strong> 리뷰 데이터 크롤링 및 전처리, 핵심 키워드 추출, LDA 토픽 모델링 및 시각화",
+            "<strong>Action</strong> Selenium으로 〈선재 업고 튀어〉·〈파묘〉 관객 리뷰 약 2,000건 수집",
+            "<strong>Action</strong> TF-IDF로 리뷰 데이터를 정제하고 핵심 명사를 추출해 워드클라우드로 요약",
+            "<strong>Action</strong> Coherence 점수로 토픽 수(26개)를 선정해 LDA 토픽 모델링, pyLDAvis로 토픽 간 관계 시각화"
         ]
     }
 };
