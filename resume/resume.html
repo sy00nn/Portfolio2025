@@ -55,7 +55,9 @@ h2 { margin-bottom: 10px; font-size: 0.74rem; font-weight: 600; letter-spacing: 
 .org-block + .org-block { margin-top: 16px; }
 .period { grid-column: 1; grid-row: 1; padding-top: 2px; font-size: 0.9rem; color: var(--muted); white-space: nowrap; }
 .org-head { grid-column: 2; }
-h3.org-name { font-size: 1.08rem; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ink); }
+/* capitals are kept for labels (name, role, section headings, Role/Action/Impact);
+   every content title (organisation, award, school, project) stays in title case */
+h3.org-name { font-size: 1.12rem; font-weight: 600; letter-spacing: -0.005em; color: var(--ink); }
 .position { margin-top: 1px; font-weight: 500; color: var(--ink); }
 .position span { font-weight: 400; color: var(--muted); }
 
@@ -128,8 +130,8 @@ h3 { grid-area: title; font-size: 1rem; font-weight: 600; color: var(--ink); }
             <h4>Fund Ops Automation Platform <span>&middot; Solo &middot; Aug &ndash; Nov 2026</span></h4>
             <ul>
                 <li><i>Role</i><span>Sole product engineer: workflow analysis and planning, data pipelines, AWS infrastructure, web UX/UI, deployment and operations</span></li>
-                <li><i>Action</i><span>Built a web system automating daily fund workflows across <b>33 funds</b>: custodian and back-office file ingestion with row-level validation, Capital Markets Act limit checks, and trade instruction generation</span></li>
-                <li><i>Impact</i><span>Halved each operator&rsquo;s daily routine work (<b>approx. 2 hours to 1</b>); adopted for daily use by <b>8 portfolio managers</b>; migrated <b>approx. 50,000 spreadsheet formulas</b> into one shared real-time view</span></li>
+                <li><i>Action</i><span>Built a web system automating daily fund accounting records, bond orders, REPO trades, and compliance work across <b>33 funds</b>, including auto-generated trade instructions and Excel files</span></li>
+                <li><i>Impact</i><span>Halved each operator&rsquo;s daily routine work (<b>2 hours &rarr; 1</b>); adopted for daily use by <b>8 managers</b>; migrated <b>50K+ spreadsheet formulas</b> into one shared real-time view</span></li>
             </ul>
             <p class="stack">Python (FastAPI, pandas), PostgreSQL, React/TypeScript, AWS (EC2, RDS, S3, ALB)</p>
         </div>
@@ -137,10 +139,10 @@ h3 { grid-area: title; font-size: 1rem; font-weight: 600; color: var(--ink); }
             <h4>Equity Factor Research &amp; Backtesting <span>&middot; Team of 2 &middot; Mar &ndash; May 2026</span></h4>
             <ul>
                 <li><i>Role</i><span>Data pipeline and database build, factor scoring, backtesting and performance analysis</span></li>
-                <li><i>Action</i><span>Rebuilt 25 years of KOSPI and KOSDAQ data (<b>approx. 300M rows</b>) into a MySQL research database via Python ETL; implemented factor scoring and quintile backtests in SQL, validated with beta-neutral long&ndash;short returns and IC</span></li>
-                <li><i>Impact</i><span>Reduced backtest runtime by <b>80%</b>; the top factor group returned <b>22.1% annualised</b> (about 3&times; KOSPI), contributing to the live fund strategy</span></li>
+                <li><i>Action</i><span>Built the research data foundation for an equity private fund: 25 years of KOSPI/KOSDAQ data (<b>300M rows</b>) loaded into MySQL via Python ETL, with SQL factor scoring and quintile backtests to validate strategies</span></li>
+                <li><i>Impact</i><span>Top factor group returned <b>22.1% annualised</b> and fed into the fund strategy; cut backtest runtime by <b>80%</b></span></li>
             </ul>
-            <p class="stack">Python (pandas, NumPy), MySQL, SQLAlchemy</p>
+            <p class="stack">Python (pandas, NumPy, Matplotlib&middot;Seaborn), MySQL, SQLAlchemy</p>
         </div>
     </article>
     <article class="org-block">
@@ -154,7 +156,7 @@ h3 { grid-area: title; font-size: 1rem; font-weight: 600; color: var(--ink); }
             <ul>
                 <li><i>Role</i><span>Planning, data pipelines, agent design and development, web UX/UI</span></li>
                 <li><i>Action</i><span>Decomposed the newsroom workflow into <b>six AI agents</b> (topic recommendation, research, drafting, headlines, copy review, article recommendation) and orchestrated them in LangGraph with prompt engineering and few-shot examples</span></li>
-                <li><i>Impact</i><span>Drafting agent&rsquo;s architecture adopted as the core of a <b>government press-release agent</b>, contributing to the contract win; delivered <b>7 B2B PoC agents</b> and took part in 6 client projects</span></li>
+                <li><i>Impact</i><span>Drafting agent adopted as the core of a <b>government press-release agent</b>, helping secure the contract</span></li>
             </ul>
             <p class="stack">Python, LangGraph, Gradio, Streamlit, Figma</p>
         </div>

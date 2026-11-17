@@ -41,9 +41,9 @@ window.PROJECTS = [
             "<strong>Action</strong> Automated daily fund accounting records, bond orders, REPO trades, and compliance work, including auto-generated trade instructions and Excel files",
             "<strong>Action</strong> Built a pipeline that ingests daily custodian and back-office files, validates each row, and quarantines invalid rows with the failure reason",
             "<strong>Action</strong> Automated regulatory limit checks under Korea&rsquo;s Capital Markets Act, flagging near-breaches and breaches before trading",
-            "<strong>Impact</strong> Halved each operator&rsquo;s daily routine work from approx. 2 hours to 1; adopted for daily use by 8 managers",
+            "<strong>Impact</strong> Halved each operator&rsquo;s daily routine work (2 hours &rarr; 1); adopted for daily use by 8 managers",
             "<strong>Impact</strong> Consolidated individually managed files into one shared real-time view, enabling team cross-checks and reducing the risk of errors",
-            "<strong>Impact</strong> Migrated approx. 50,000 spreadsheet formulas into the system, correcting numerical errors in the legacy workbooks",
+            "<strong>Impact</strong> Migrated 50K+ spreadsheet formulas into the system, correcting numerical errors in the legacy workbooks",
             "<strong>Lesson</strong> Automation depends less on technology than on deciding <em>what the system handles and where human judgement remains</em>, a boundary defined together with the portfolio managers"
         ],
         "links": [],
@@ -403,7 +403,7 @@ window.PROJECTS_KO = {
             "<strong>Action</strong> 자산 운용 업무의 워크플로우 구조화를 통해 일일 펀드 회계 처리 내역, 채권 주문, REPO 거래, 컴플라이언스 업무를 자동화하고 운용지시서·엑셀 파일 자동 생성 기능 구현",
             "<strong>Action</strong> 수탁사·백오피스 일일 파일 자동 수집, 행 단위 검증, 오류 행 사유별 분리 및 재시도 파이프라인 구축으로 확인이 필요한 파일·행을 즉시 식별",
             "<strong>Action</strong> 자본시장법 규제 한도 점검을 자동화해 운용역과 컴플라이언스가 동일한 실시간 화면을 보고, 매매 전 근접·위반 펀드를 사전 탐지",
-            "<strong>Impact</strong> 오전 수기 업무 자동화로 1인당 일일 업무 시간을 약 2시간에서 1시간으로 단축, 운용역 8명이 33개 펀드에 매일 사용",
+            "<strong>Impact</strong> 오전 수기 업무 자동화로 1인당 일일 업무 시간을 2시간 &rarr; 1시간으로 단축, 운용역 8명이 33개 펀드에 매일 사용",
             "<strong>Impact</strong> 개인 파일 단위로 흩어진 업무를 팀 단위 실시간 공유로 통합해 상호 더블체크로 업무 실수 가능성을 낮추고, 매도 주문 실시간 표시로 운용역–운용지시 팀 간 협업 개선",
             "<strong>Impact</strong> 수식 약 5만 개를 시스템으로 옮기며 기존 엑셀의 수치 오류를 수정하고, 인수인계와 신규 실무자의 업무 적응을 수월하게 개선",
             "<strong>Lesson</strong> 자동화의 핵심은 기술보다 <em>어디까지 시스템에 맡기고 어디서 사람이 판단할지</em> 경계를 정하는 데 있음을 배움. 운용역의 업무 맥락을 먼저 이해하고 그 경계를 함께 정할 때, 시스템이 실제 업무에 자리 잡음"
