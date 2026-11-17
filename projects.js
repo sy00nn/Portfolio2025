@@ -101,7 +101,7 @@ window.PROJECTS = [
         "category": "professional",
         "org": "Dawon Asset Management",
         "date": "2026.03 &ndash; 05",
-        "team": "2 people",
+        "team": "Team of 2",
         "thumb": "images/projects/quant-research/overview.jpg",
         "gallery": [],
         "summary": "Rebuilt 25 years of KOSPI and KOSDAQ data (approx. 300 million rows) into a database and pipeline for backtesting an equity private fund&rsquo;s factor strategies.",
@@ -130,7 +130,7 @@ window.PROJECTS = [
         "category": "competitions",
         "org": "2024 Outstanding Undergraduate Research Award, CAU AI Humanities",
         "date": "2024.08",
-        "team": "2 people",
+        "team": "Team of 2",
         "thumb": "images/projects/rider-safety/poster.jpg",
         "gallery": [],
         "summary": "Planned an AI service that predicts injury severity and guides delivery riders through injury claims; only about 1 in 10 riders in an accident is compensated.",
@@ -173,7 +173,7 @@ window.PROJECTS = [
         "category": "competitions",
         "org": "Grand Prize, CUAI &amp; DArt-B Kaggle Datathon",
         "date": "2024.11",
-        "team": "4 people",
+        "team": "Team of 4",
         "thumb": "images/projects/used-car-price/01.jpg",
         "gallery": [
             "images/projects/used-car-price/02.jpg",
@@ -209,7 +209,7 @@ window.PROJECTS = [
         "category": "competitions",
         "org": "Honorable Mention, CAU Patent Competition",
         "date": "2024.12",
-        "team": "3 people",
+        "team": "Team of 3",
         "thumb": "images/projects/sanjae-mate/01.jpg",
         "gallery": [
             "images/projects/sanjae-mate/02.jpg",
@@ -255,7 +255,7 @@ window.PROJECTS = [
         "category": "competitions",
         "org": "3rd Place, CAU Virtual Asset Tracing Competition",
         "date": "2024.12",
-        "team": "3 people",
+        "team": "Team of 3",
         "thumb": "images/projects/onchain-tracing/01.jpg",
         "gallery": [
             "images/projects/onchain-tracing/02.jpg"
@@ -288,7 +288,7 @@ window.PROJECTS = [
         "category": "competitions",
         "org": "Grand Prize, CUAI 7th Winter Conference",
         "date": "2024.12",
-        "team": "4 people",
+        "team": "Team of 4",
         "thumb": "images/projects/dpfl-fusion/thumb.jpg",
         "gallery": [],
         "summary": "Proposed a federated learning framework that scales differential privacy (DP) noise per feature by SHAP importance, replacing uniform noise that degrades accuracy.",

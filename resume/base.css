@@ -1,0 +1,11 @@
+/* shared reset for every résumé design */
+* { box-sizing: border-box; }
+body { margin: 0; -webkit-print-color-adjust: exact; }
+h1, h2, h3, p, ul, dl, dd { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+i { font-style: normal; }
+.entry { break-inside: avoid; }
+h2 { break-after: avoid; }
+.org-head + .project { break-before: avoid; }
+.project, .activities .org-block { break-inside: avoid; }

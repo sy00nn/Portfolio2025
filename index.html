@@ -300,7 +300,7 @@
     }
     function teamLabel(team) {
         if (lang !== 'ko' || !team) return team;
-        return team === 'Solo' ? '개인' : team.replace(/^(\d+) people$/, '$1인');
+        return team === 'Solo' ? '개인' : team.replace(/^Team of (\d+)$/, '$1인');
     }
 
     function resolveTab(raw) {

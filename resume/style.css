@@ -1,0 +1,83 @@
+/* Minimal résumé: Inter, one ink colour in three strengths, hairline rules,
+   a date column on the left and content on the right. */
+@page { size: A4; margin: 13mm 17mm 12mm; }
+:root {
+    --ink: #161616;      /* names, headings, key figures */
+    --body: #3b3b3b;     /* running text */
+    --muted: #8b8b8b;    /* dates, labels, secondary info */
+    --rule: #e3e3e3;     /* hairlines */
+    --col: 33mm;         /* date column */
+}
+html { font-size: 8.5pt; }
+body {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-feature-settings: "cv11";
+    color: var(--body);
+    line-height: 1.5;
+    letter-spacing: -0.003em;
+    -webkit-font-smoothing: antialiased;
+}
+b { font-weight: 600; color: var(--ink); }
+
+/* ---- header ---- */
+header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 14px; }
+h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 2.75rem; line-height: 1.05; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ink); }
+h1 span { display: block; }
+.role { margin-top: 9px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.about { margin-top: 10px; max-width: 115mm; font-size: 1rem; color: var(--body); }
+.contact { padding-top: 2px; font-size: 0.92rem; color: var(--body); }
+.contact li { display: flex; gap: 9px; line-height: 1.75; }
+.contact i { width: 13px; font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+
+/* ---- sections: hairline with a short ink accent, small spaced label ---- */
+section { position: relative; margin-top: 14px; padding-top: 11px; border-top: 1px solid var(--rule); }
+section::before { content: ""; position: absolute; left: 0; top: -1px; width: 18px; height: 1.5px; background: var(--ink); }
+h2 { margin-bottom: 10px; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+
+/* ---- organisation blocks (work experience, activities) ---- */
+.org-block { display: grid; grid-template-columns: var(--col) 1fr; }
+.org-block + .org-block { margin-top: 16px; }
+.period { grid-column: 1; grid-row: 1; padding-top: 2px; font-size: 0.9rem; color: var(--muted); white-space: nowrap; }
+.org-head { grid-column: 2; }
+h3.org-name { font-size: 1.08rem; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ink); }
+.position { margin-top: 1px; font-weight: 500; color: var(--ink); }
+.position span { font-weight: 400; color: var(--muted); }
+
+/* projects hang under their organisation, marked by a hairline */
+.project { grid-column: 2; margin-top: 9px; padding-left: 11px; border-left: 1px solid var(--rule); }
+.project h4 { margin: 0; font-size: 1rem; font-weight: 600; color: var(--ink); }
+.project h4 span { font-weight: 400; color: var(--muted); }
+
+/* Role / Action / Impact: quiet label column, text beside it */
+.project ul, .entry ul { margin-top: 4px; }
+.entry ul { grid-area: body; }
+/* tabular figures only where dates line up; elsewhere they widen hyphens */
+.period, .when { font-feature-settings: "tnum"; }
+li { position: relative; }
+.project li, .entry li { display: grid; grid-template-columns: 14mm 1fr; }
+.project li + li, .entry li + li { margin-top: 2.5px; }
+.project li i, .entry li i { padding-top: 0.28em; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.stack { margin-top: 4px; font-size: 0.88rem; color: var(--muted); }
+
+/* ---- awards: detailed entries and one-line entries ---- */
+.entry { display: grid; grid-template-columns: var(--col) 1fr; grid-template-areas: "when title" ". sub" ". body" ". stack"; }
+.when { grid-area: when; padding-top: 1px; font-size: 0.9rem; color: var(--muted); white-space: nowrap; }
+h3 { grid-area: title; font-size: 1rem; font-weight: 600; color: var(--ink); }
+.sub { grid-area: sub; color: var(--muted); }
+.org { color: var(--body); }
+.org + .meta::before { content: "\00a0\00b7\00a0"; }
+.entry .stack { grid-area: stack; }
+.awards .entry + .entry { margin-top: 12px; }
+.awards h3 { font-size: 1rem; }
+.awards .entry ul { margin-left: 0; padding-left: 11px; border-left: 1px solid var(--rule); margin-top: 5px; }
+
+/* one-line rows: awards without detail, education */
+.education .entry, .awards .entry:not(.detail) { grid-template-columns: var(--col) auto 1fr; grid-template-areas: "when title sub"; align-items: baseline; }
+.education .entry + .entry, .awards .entry:not(.detail) + .entry:not(.detail) { margin-top: 4px; }
+.education .sub, .awards .entry:not(.detail) .sub { padding-left: 9px; }
+
+/* ---- skills ---- */
+.skills dl { display: grid; grid-template-columns: var(--col) 1fr; row-gap: 4px; }
+.skills dt { color: var(--muted); }
+
+.skills, .education { break-inside: avoid; }

@@ -1,0 +1,170 @@
+<!-- Résumé content. Edit here (look: resume/style.css), then run resume/build.sh. -->
+<header>
+    <div class="id">
+        <h1>Seoyoon <span>Park</span></h1>
+        <p class="role">Product Builder</p>
+        <p class="about">Product Builder who understands users&rsquo; context, structures the problem, and solves it with data.</p>
+    </div>
+    <ul class="contact">
+        <li><i title="Phone">T</i>+82 10-2959-8931</li>
+        <li><i title="Email">E</i><a href="mailto:blueebada@gmail.com">blueebada@gmail.com</a></li>
+        <li><i title="Portfolio">W</i><a href="https://parkseoyoon.netlify.app/">parkseoyoon.netlify.app</a></li>
+        <li><i title="LinkedIn">in</i><a href="https://www.linkedin.com/in/yoonn/">linkedin.com/in/yoonn</a></li>
+        <li><i title="Location">A</i>Seoul, Korea</li>
+    </ul>
+</header>
+
+<div class="main">
+
+<section class="experience">
+    <h2>Work Experience</h2>
+    <article class="org-block">
+        <p class="period">Mar 2026 &ndash; Present</p>
+        <div class="org-head">
+            <h3 class="org-name">Dawon Asset Management</h3>
+            <p class="position">Product Engineer <span>&middot; Asset Management Division</span></p>
+        </div>
+        <div class="project">
+            <h4>Fund Ops Automation Platform <span>&middot; Solo &middot; Aug &ndash; Nov 2026</span></h4>
+            <ul>
+                <li><i>Role</i><span>Sole product engineer: workflow analysis and planning, data pipelines, AWS infrastructure, web UX/UI, deployment and operations</span></li>
+                <li><i>Action</i><span>Built a web system automating daily fund workflows across <b>33 funds</b>: custodian and back-office file ingestion with row-level validation, Capital Markets Act limit checks, and trade instruction generation</span></li>
+                <li><i>Impact</i><span>Halved each operator&rsquo;s daily routine work (<b>approx. 2 hours to 1</b>); adopted for daily use by <b>8 portfolio managers</b>; migrated <b>approx. 50,000 spreadsheet formulas</b> into one shared real-time view</span></li>
+            </ul>
+            <p class="stack">Python (FastAPI, pandas), PostgreSQL, React/TypeScript, AWS (EC2, RDS, S3, ALB)</p>
+        </div>
+        <div class="project">
+            <h4>Equity Factor Research &amp; Backtesting <span>&middot; Team of 2 &middot; Mar &ndash; May 2026</span></h4>
+            <ul>
+                <li><i>Role</i><span>Data pipeline and database build, factor scoring, backtesting and performance analysis</span></li>
+                <li><i>Action</i><span>Rebuilt 25 years of KOSPI and KOSDAQ data (<b>approx. 300M rows</b>) into a MySQL research database via Python ETL; implemented factor scoring and quintile backtests in SQL, validated with beta-neutral long&ndash;short returns and IC</span></li>
+                <li><i>Impact</i><span>Reduced backtest runtime by <b>80%</b>; the top factor group returned <b>22.1% annualised</b> (about 3&times; KOSPI), contributing to the live fund strategy</span></li>
+            </ul>
+            <p class="stack">Python (pandas, NumPy), MySQL, SQLAlchemy</p>
+        </div>
+    </article>
+    <article class="org-block">
+        <p class="period">Jun &ndash; Oct 2025</p>
+        <div class="org-head">
+            <h3 class="org-name">Wrtn Technologies</h3>
+            <p class="position">Service Ops Manager Intern <span>&middot; AX Team</span></p>
+        </div>
+        <div class="project">
+            <h4>Newsroom Agent: Multi-Agent Article Production <span>&middot; Solo</span></h4>
+            <ul>
+                <li><i>Role</i><span>Planning, data pipelines, agent design and development, web UX/UI</span></li>
+                <li><i>Action</i><span>Decomposed the newsroom workflow into <b>six AI agents</b> (topic recommendation, research, drafting, headlines, copy review, article recommendation) and orchestrated them in LangGraph with prompt engineering and few-shot examples</span></li>
+                <li><i>Impact</i><span>Drafting agent&rsquo;s architecture adopted as the core of a <b>government press-release agent</b>, contributing to the contract win; delivered <b>7 B2B PoC agents</b> and took part in 6 client projects</span></li>
+            </ul>
+            <p class="stack">Python, LangGraph, Gradio, Streamlit, Figma</p>
+        </div>
+    </article>
+</section>
+
+<section class="activities">
+    <h2>Activities</h2>
+    <article class="org-block">
+        <p class="period">Mar &ndash; Aug 2024</p>
+        <div class="org-head">
+            <h3 class="org-name">Chung-Ang University HK+ AI Humanities</h3>
+            <p class="position">Undergraduate Researcher</p>
+        </div>
+    </article>
+    <article class="org-block">
+        <p class="period">Mar 2024 &ndash; Feb 2025</p>
+        <div class="org-head">
+            <h3 class="org-name">CUAI, Chung-Ang University AI Society</h3>
+            <p class="position">Member</p>
+        </div>
+    </article>
+</section>
+
+<section class="awards">
+    <h2>Awards</h2>
+    <div class="list">
+        <article class="entry detail">
+            <h3>Grand Prize, CUAI 7th Winter Conference</h3>
+            <p class="sub"><span class="org">DPFL-FUSION: SHAP-Optimized Noise Generation &middot; Team of 4</span></p>
+            <p class="when">Feb 2025</p>
+            <ul>
+                <li><i>Role</i><span>Research direction and hypothesis, noise-allocation design, MNIST experiments</span></li>
+                <li><i>Action</i><span>Proposed a federated learning framework scaling DP noise per feature by SHAP importance</span></li>
+                <li><i>Impact</i><span>Beat a prior adaptive DP method (Talaei, 2024) under the same DP guarantee</span></li>
+            </ul>
+        </article>
+        <article class="entry detail">
+            <h3>Honorable Mention, Patent Competition on Safe Data Utilization</h3>
+            <p class="sub"><span class="org">Sanjae Mate: All-in-One Injury Claim Assistant &middot; Team of 3</span></p>
+            <p class="when">Jan 2025</p>
+            <ul>
+                <li><i>Role</i><span>Service planning, public data collection, web crawling, ML modelling, review summaries</span></li>
+                <li><i>Action</i><span>Planned an app covering prevention, filing, approval, and rehabilitation; built a map of designated hospitals, ChatGPT API review summaries, and an accident-type model on <b>107,180 records</b></span></li>
+                <li><i>Impact</i><span>Delivered a working prototype and app design to increase uptake of industrial injury insurance</span></li>
+            </ul>
+        </article>
+        <article class="entry detail">
+            <h3>3rd Place, Virtual Asset Tracing Competition</h3>
+            <p class="sub"><span class="org">On-Chain Tracing of WannaCry Ransom Funds &middot; Team of 3</span></p>
+            <p class="when">Dec 2024</p>
+            <ul>
+                <li><i>Role</i><span>Tracing scope definition, on-chain fund-flow analysis, laundering-method analysis</span></li>
+                <li><i>Action</i><span>Clustered ransom addresses in Chainalysis Reactor and traced funds through ShapeShift and Changelly into Monero</span></li>
+                <li><i>Impact</i><span>Mapped the conversion of <b>approx. 4.7 BTC and 52 BTC</b> and structured the laundering into four stages</span></li>
+            </ul>
+        </article>
+        <article class="entry detail">
+            <h3>Grand Prize, CUAI &amp; DArt-B Kaggle Datathon</h3>
+            <p class="sub"><span class="org">US Used Car Price Prediction &middot; Team of 4</span></p>
+            <p class="when">Nov 2024</p>
+            <ul>
+                <li><i>Role</i><span>Problem definition, EDA, preprocessing and feature engineering, insight analysis</span></li>
+                <li><i>Action</i><span>Engineered unstandardised cars.com listing fields into model-ready features and built an AutoGluon stacking ensemble</span></li>
+                <li><i>Impact</i><span>Improved prediction performance by <b>20%</b>; identified mileage, model, and release year as the core price drivers</span></li>
+            </ul>
+        </article>
+        <article class="entry detail">
+            <h3>Outstanding Undergraduate Research Award, CAU HK+ AI Humanities</h3>
+            <p class="sub"><span class="org">Injury Risk Prediction for Delivery Riders &middot; Team of 2</span></p>
+            <p class="when">Aug 2024</p>
+            <ul>
+                <li><i>Role</i><span>Service planning, data collection, EDA, ML modelling, ChatGPT API claim alerts</span></li>
+                <li><i>Action</i><span>Benchmarked seven ML models on 14,944 Seoul motorcycle accident records, selected XGBoost, and fed the predicted severity into ChatGPT prompts that text riders the claim steps</span></li>
+                <li><i>Impact</i><span><b>96.5% accuracy</b> and 0.96 F1-score</span></li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+</div>
+
+<div class="side">
+
+<section class="education">
+    <h2>Education</h2>
+    <div class="list">
+        <article class="entry">
+            <h3>Chung-Ang University, Seoul</h3>
+            <p class="sub"><span class="org">B.B.A. and Cybersecurity</span></p>
+            <p class="when">Mar 2020 &ndash; Aug 2025</p>
+        </article>
+        <article class="entry">
+            <h3>ESCE International Business School, Paris</h3>
+            <p class="sub"><span class="org">Exchange Student Program</span></p>
+            <p class="when">Jan &ndash; Jun 2023</p>
+        </article>
+    </div>
+</section>
+
+<section class="skills">
+    <h2>Skills</h2>
+    <dl>
+        <dt>Engineering</dt><dd>Python (FastAPI), SQL (PostgreSQL, MySQL), React/TypeScript, AWS (EC2, RDS, S3, ALB), Git</dd>
+        <dt>Data &amp; ML</dt><dd>pandas, NumPy, scikit-learn, PyTorch, TensorFlow, Tableau</dd>
+        <dt>AI &amp; Product</dt><dd>LangGraph, prompt engineering, Gradio, Streamlit, Figma</dd>
+        <dt>Languages</dt><dd>Korean (native), English (OPIc AL)</dd>
+        <dt>Certificate</dt><dd>SQLD (SQL Developer), Sep 2024</dd>
+    </dl>
+</section>
+
+
+</div>
