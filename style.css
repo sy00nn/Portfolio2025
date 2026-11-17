@@ -29,8 +29,6 @@
     --hero-stage-top: max(84px, calc(50vh - var(--page-pad-top) - var(--topbar-height)));
 
     --scroll-fade-size: 34px;
-    /* scrolling content fades out before it reaches the masthead */
-    --masthead-fade: calc(var(--topbar-height) * 0.8);
     /* visible height inside a scrolling panel (viewport minus page padding,
        masthead offset and the panel's own top/bottom padding) */
     --panel-visible: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom) - var(--topbar-height) - 34px - var(--scroll-fade-size));
@@ -351,9 +349,8 @@ body {
 /* single scrolling column: a label rail on the left, content on the right —
    the same two-part rhythm Awards and Projects use */
 .about-panel {
-    margin-top: calc(-1 * var(--topbar-height));
-    padding-top: calc(var(--topbar-height) + 34px);
-    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom));
+    padding-top: 34px;
+    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom) - var(--topbar-height));
     /* clears the bottom fade so the last line stays readable at full scroll */
     padding-bottom: var(--scroll-fade-size);
     overflow-y: auto;
@@ -362,14 +359,14 @@ body {
     -webkit-mask-image: linear-gradient(
         to bottom,
         transparent 0,
-        #000 var(--masthead-fade),
+        #000 var(--scroll-fade-size),
         #000 calc(100% - var(--scroll-fade-size)),
         transparent 100%
     );
     mask-image: linear-gradient(
         to bottom,
         transparent 0,
-        #000 var(--masthead-fade),
+        #000 var(--scroll-fade-size),
         #000 calc(100% - var(--scroll-fade-size)),
         transparent 100%
     );
@@ -506,9 +503,8 @@ body {
    ------------------------------------------------------------ */
 
 .awards-panel {
-    margin-top: calc(-1 * var(--topbar-height));
-    padding-top: calc(var(--topbar-height) + 34px);
-    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom));
+    padding-top: 34px;
+    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom) - var(--topbar-height));
     /* clears the bottom fade so the last line stays readable at full scroll */
     padding-bottom: var(--scroll-fade-size);
     overflow-y: auto;
@@ -517,14 +513,14 @@ body {
     -webkit-mask-image: linear-gradient(
         to bottom,
         transparent 0,
-        #000 var(--masthead-fade),
+        #000 var(--scroll-fade-size),
         #000 calc(100% - var(--scroll-fade-size)),
         transparent 100%
     );
     mask-image: linear-gradient(
         to bottom,
         transparent 0,
-        #000 var(--masthead-fade),
+        #000 var(--scroll-fade-size),
         #000 calc(100% - var(--scroll-fade-size)),
         transparent 100%
     );
@@ -620,8 +616,7 @@ body {
    ------------------------------------------------------------ */
 
 .project-panel {
-    margin-top: calc(-1 * var(--topbar-height));
-    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom));
+    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom) - var(--topbar-height));
     /* clears the bottom fade so the last line stays readable at full scroll */
     padding-bottom: var(--scroll-fade-size);
     overflow-y: auto;
@@ -630,14 +625,14 @@ body {
     -webkit-mask-image: linear-gradient(
         to bottom,
         transparent 0,
-        #000 var(--masthead-fade),
+        #000 var(--scroll-fade-size),
         #000 calc(100% - var(--scroll-fade-size)),
         transparent 100%
     );
     mask-image: linear-gradient(
         to bottom,
         transparent 0,
-        #000 var(--masthead-fade),
+        #000 var(--scroll-fade-size),
         #000 calc(100% - var(--scroll-fade-size)),
         transparent 100%
     );
@@ -647,7 +642,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: clamp(14px, 1.8vw, 26px);
-    padding-top: calc(var(--topbar-height) + 34px);
+    padding-top: 34px;
     padding-bottom: 14px;
     /* stays put while the list scrolls under it; the viewport-fixed paper
        matches the page ground so the bar has no visible edge */
@@ -836,9 +831,9 @@ body {
    ------------------------------------------------------------ */
 
 .project-detail-panel {
-    margin-top: calc(-1 * var(--topbar-height));
-    padding-top: calc(var(--topbar-height) + 34px);
-    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom));
+    /* starts below the masthead, so scrolled content never runs under the name */
+    padding-top: 34px;
+    height: calc(100vh - var(--page-pad-top) - var(--page-pad-bottom) - var(--topbar-height));
     padding-bottom: var(--scroll-fade-size);
     overflow-y: auto;
     padding-right: 6px;
@@ -846,14 +841,14 @@ body {
     -webkit-mask-image: linear-gradient(
         to bottom,
         transparent 0,
-        #000 var(--masthead-fade),
+        #000 var(--scroll-fade-size),
         #000 calc(100% - var(--scroll-fade-size)),
         transparent 100%
     );
     mask-image: linear-gradient(
         to bottom,
         transparent 0,
-        #000 var(--masthead-fade),
+        #000 var(--scroll-fade-size),
         #000 calc(100% - var(--scroll-fade-size)),
         transparent 100%
     );

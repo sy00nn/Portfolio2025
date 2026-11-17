@@ -24,7 +24,7 @@ window.PROJECTS = [
         "title": "Fund Ops Automation Platform",
         "category": "professional",
         "org": "Dawon Asset Management",
-        "date": "2026.10 &ndash; 11",
+        "date": "2026.08 &ndash; 11",
         "team": "Solo",
         "thumb": "images/projects/fund-ops/01.jpg",
         "gallery": [
@@ -43,7 +43,8 @@ window.PROJECTS = [
             "<strong>Action</strong> Automated regulatory limit checks under Korea&rsquo;s Capital Markets Act, giving portfolio managers and compliance the same real-time view, with near-breach and breach flags raised before trading",
             "<strong>Impact</strong> Cut each operator&rsquo;s daily routine work from about 2 hours to 1; used every day by 8 portfolio managers across 33 funds",
             "<strong>Impact</strong> Moved individual file-based work onto one shared team view, so colleagues double-check each other in real time and errors are less likely; sell orders now show live, smoothing work between portfolio managers and the trade instruction team",
-            "<strong>Impact</strong> Moved about 50,000 spreadsheet formulas into the system, fixing figure errors in the old workbooks, and made handovers and onboarding new operators easier"
+            "<strong>Impact</strong> Moved about 50,000 spreadsheet formulas into the system, fixing figure errors in the old workbooks, and made handovers and onboarding new operators easier",
+            "<strong>Lesson</strong> Learned that automation succeeds less on technology than on deciding <em>what the system handles and where people still judge</em>; the system took root once I understood the portfolio managers&rsquo; context and set that boundary together with them"
         ],
         "links": [],
         "tags": [
@@ -76,7 +77,8 @@ window.PROJECTS = [
             "<strong>Role</strong> Planning, crawling and API data pipelines, agent design and development, and web UX/UI development",
             "<strong>Action</strong> Mapped the newsroom workflow and structured it into six AI agents: topic recommendation, research, drafting in each reporter&rsquo;s style learned from their recent articles, headline and subhead generation, copy review, and article recommendation by readers&rsquo; gender and age",
             "<strong>Action</strong> Built a LangGraph multi-agent workflow, applying prompt engineering and few-shot examples for consistent outputs",
-            "<strong>Impact</strong> The drafting agent&rsquo;s architecture was used as the core of a government press-release agent, contributing to the contract win"
+            "<strong>Impact</strong> The drafting agent&rsquo;s architecture was used as the core of a government press-release agent, contributing to the contract win",
+            "<strong>Lesson</strong> Learned to map the workflow first, split it into clear system roles, and fit each feature naturally into the UX flow; AI should be applied selectively, where its value is clear"
         ],
         "links": [
             {
@@ -96,21 +98,20 @@ window.PROJECTS = [
     {
         "slug": "quant-research",
         "shortTitle": "Quant Research",
-        "title": "Quant Research for a CSSP Private Fund",
+        "title": "Equity Factor Research &amp; Backtesting",
         "category": "professional",
         "org": "Dawon Asset Management",
-        "date": "2025.02 &ndash; 04",
+        "date": "2026.03 &ndash; 05",
         "team": "2 people",
         "thumb": "images/projects/quant-research/overview.jpg",
         "gallery": [],
-        "summary": "25 years of KOSPI and KOSDAQ market and financial data (about 300 million rows) sat in scattered Excel files. I moved it into a database and built a backtesting environment to test factors for a CSSP private fund.",
+        "summary": "Rebuilt 25 years of KOSPI and KOSDAQ market and financial data (about 300 million rows) into a database and data pipeline, creating a backtesting environment to test factor strategies for an equity private fund.",
         "features": [
             "<strong>Role</strong> Data pipeline design and database build, factor scoring, backtesting and performance analysis, and dashboard visualisation",
-            "<strong>Action</strong> Moved the Excel data into MySQL through a Python ETL pipeline: wide-to-long reshaping, column standardisation, and chunked loading",
-            "<strong>Action</strong> Implemented factor scoring and quintile backtests in SQL, with 1, 3, and 6-month rebalancing, beta-neutral long&ndash;short returns, and IC analysis",
-            "<strong>Action</strong> Visualised the backtest results in a dashboard-style report",
-            "<strong>Impact</strong> Cut compute time 60% by moving Excel-based work onto the database",
-            "<strong>Impact</strong> Top quintile returned 22.1% annualised against 7.1% for the KOSPI (IC 0.182), contributing to a 3.9% average fund excess return (Jul 2025)"
+            "<strong>Action</strong> Normalised and standardised the data, and built a MySQL research database through a Python ETL pipeline",
+            "<strong>Action</strong> Implemented SQL-based factor scoring and quintile backtests, validating factors with beta-neutral long&ndash;short returns and IC across 1, 3, and 6-month rebalancing",
+            "<strong>Impact</strong> Cut backtest time 80%, with dashboard reports supporting factor selection",
+            "<strong>Impact</strong> The top factor group returned 22.1% a year, about three times the KOSPI, contributing to the live fund strategy (fund return since inception +83% as of May 2026)"
         ],
         "links": [],
         "tags": [
@@ -405,7 +406,8 @@ window.PROJECTS_KO = {
             "<strong>Action</strong> 자본시장법 규제 한도 점검을 자동화해 운용역과 컴플라이언스가 동일한 실시간 화면을 보고, 매매 전 근접·위반 펀드를 사전 탐지",
             "<strong>Impact</strong> 오전 수기 업무 자동화로 1인당 일일 업무 시간을 약 2시간에서 1시간으로 단축, 운용역 8명이 33개 펀드에 매일 사용",
             "<strong>Impact</strong> 개인 파일 단위로 흩어진 업무를 팀 단위 실시간 공유로 통합해 상호 더블체크로 업무 실수 가능성을 낮추고, 매도 주문 실시간 표시로 운용역–운용지시 팀 간 협업 개선",
-            "<strong>Impact</strong> 수식 약 5만 개를 시스템으로 옮기며 기존 엑셀의 수치 오류를 수정하고, 인수인계와 신규 실무자의 업무 적응을 수월하게 개선"
+            "<strong>Impact</strong> 수식 약 5만 개를 시스템으로 옮기며 기존 엑셀의 수치 오류를 수정하고, 인수인계와 신규 실무자의 업무 적응을 수월하게 개선",
+            "<strong>Lesson</strong> 자동화의 핵심은 기술보다 <em>어디까지 시스템에 맡기고 어디서 사람이 판단할지</em> 경계를 정하는 데 있음을 배움. 운용역의 업무 맥락을 먼저 이해하고 그 경계를 함께 정할 때, 시스템이 실제 업무에 자리 잡음"
         ],
         "note": "&#8251; 이미지 속 데이터는 모두 가상 데이터이며, 실제 회사·펀드와 무관합니다."
     },
@@ -417,20 +419,20 @@ window.PROJECTS_KO = {
             "<strong>Role</strong> 기획, 웹 크롤링·API 기반 데이터 수집 파이프라인, Agent 설계 및 개발, Web UX/UI 개발",
             "<strong>Action</strong> 기사 생산 과정의 워크플로우를 6개 에이전트 역할로 구조화하여 기획: 주제 생성, 리서치, 기자 문체를 학습한 초안 작성, 제목·부제 생성, 윤문, 독자 성별·연령별 기사 추천",
             "<strong>Action</strong> LangGraph 기반 Multi-Agent Workflow를 설계하고, 출력 일관성을 위해 Prompt Engineering 및 Few-shot 적용",
-            "<strong>Impact</strong> 기사 초안 작성 에이전트 아키텍처가 정부기관 보도자료 작성 에이전트의 핵심 구조로 사용되어 계약 수주에 기여"
+            "<strong>Impact</strong> 기사 초안 작성 에이전트 아키텍처가 정부기관 보도자료 작성 에이전트의 핵심 구조로 사용되어 계약 수주에 기여",
+            "<strong>Lesson</strong> 워크플로우를 먼저 파악해 시스템의 역할을 명확히 나누고, 각 기능이 UX 흐름에 자연스럽게 녹아들도록 설계하는 것이 중요함을 배움. AI는 효과가 명확한 곳에 선별해 적용해야 함을 느낌"
         ]
     },
     "quant-research": {
-        "title": "CSSP 사모펀드 퀀트 리서치 분석",
+        "title": "주식형 사모펀드 팩터 리서치 및 백테스트 환경 구축",
         "org": "다원자산운용(주) 자산운용본부",
-        "summary": "엑셀 파일로 흩어져 있던 KOSPI·KOSDAQ 25년치 시장·재무 데이터(약 3억 건)를 DB로 전환하고, CSSP 사모펀드 운용에 쓸 팩터를 검증하는 백테스트 환경을 구축했습니다.",
+        "summary": "KOSPI·KOSDAQ 25년의 시장 및 재무 데이터(약 3억 건)를 DB와 데이터 파이프라인으로 재구성해, 주식형 사모펀드의 팩터 전략을 검증하는 백테스트 환경을 구축했습니다.",
         "features": [
             "<strong>Role</strong> 데이터 파이프라인 설계 및 DB 구축, 팩터 스코어링, 백테스트 및 성과 분석, 대시보드 시각화",
-            "<strong>Action</strong> Python ETL(Wide→Long 변환, 컬럼 표준화, 분할 적재)로 엑셀 데이터를 MySQL DB로 전환",
-            "<strong>Action</strong> 팩터 스코어링과 5분위 백테스트를 SQL로 구현(월·분기·반기 리밸런싱, 베타 중립 롱숏, IC 분석)",
-            "<strong>Action</strong> 백테스트 성과를 대시보드형 리포트로 시각화",
-            "<strong>Impact</strong> 엑셀 기반 작업을 DB로 전환해 연산 속도 60% 단축",
-            "<strong>Impact</strong> 1분위 연환산 수익률 22.1%(KOSPI 7.1%)·IC 0.182 확인, 펀드 평균 3.9% 초과수익률(&rsquo;25.07) 기여"
+            "<strong>Action</strong> 데이터 정규화 및 표준화, Python ETL을 통한 MySQL 분석 DB 구축",
+            "<strong>Action</strong> SQL 기반 팩터 스코어링, 5분위 백테스트 구현, 월·분기·반기 리밸런싱별 베타 중립 롱숏 수익률과 IC로 팩터 유효성 검증",
+            "<strong>Impact</strong> 백테스트 시간 80% 단축, 결과를 대시보드 리포트로 제공해 팩터 선정 판단 지원",
+            "<strong>Impact</strong> 팩터 상위 그룹의 연 수익률 22.1%로 KOSPI 대비 약 3배 성과를 확인하고, 실제 펀드 운용 전략에 기여 (해당 펀드 설정 이후 누적 +83%, 2026.05 기준)"
         ]
     },
     "rider-safety": {
@@ -465,7 +467,7 @@ window.PROJECTS_KO = {
             "<strong>Role</strong> 문제 정의 및 서비스 기획, 공공 데이터 수집·전처리, 웹 크롤링, ML 예측 모델링, ChatGPT API 기반 리뷰 요약 구현",
             "<strong>Action</strong> 산재 지정의료기관·직업재활기관 주소를 위경도로 변환해 지도 시각화",
             "<strong>Action</strong> 카카오맵 병원 리뷰를 Selenium으로 크롤링하고 ChatGPT API로 최신 리뷰 요약",
-            "<strong>Action</strong> 사고재해 데이터 107,180건으로 연령·업종·근속기간별 발생 가능성이 높은 재해 유형 ML 예측 모델 구축",
+            "<strong>Action</strong> 사고재해 데이터 107,180건을 학습해 연령·업종·근속기간에 따라 발생 가능성이 높은 재해 유형을 예측하는 ML 모델 구축",
             "<strong>Impact</strong> 서비스 프로토타입 및 앱 설계 완성, 특허 공모전 장려상 수상"
         ]
     },
