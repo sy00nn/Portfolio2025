@@ -7,6 +7,11 @@
     --muted: #8b8b8b;    /* dates, labels, secondary info */
     --rule: #e3e3e3;     /* hairlines */
     --col: 33mm;         /* date column */
+    /* type scale: every heading of the same rank uses the same size */
+    --t1: 1.1rem;        /* entry titles: organisation, award, school */
+    --t2: 1rem;          /* sub-titles: position, project, award project line */
+    --t-meta: 0.9rem;    /* dates */
+    --t-small: 0.88rem;  /* tech stack */
 }
 html { font-size: 8.5pt; }
 body {
@@ -37,17 +42,17 @@ h2 { margin-bottom: 10px; font-size: 0.74rem; font-weight: 600; letter-spacing: 
 /* ---- organisation blocks (work experience, activities) ---- */
 .org-block { display: grid; grid-template-columns: var(--col) 1fr; }
 .org-block + .org-block { margin-top: 16px; }
-.period { grid-column: 1; grid-row: 1; padding-top: 2px; font-size: 0.9rem; color: var(--muted); white-space: nowrap; }
+.period { grid-column: 1; grid-row: 1; padding-top: 2px; font-size: var(--t-meta); color: var(--muted); white-space: nowrap; }
 .org-head { grid-column: 2; }
 /* capitals are kept for labels (name, role, section headings, Role/Action/Impact);
    every content title (organisation, award, school, project) stays in title case */
-h3.org-name { font-size: 1.12rem; font-weight: 600; letter-spacing: -0.005em; color: var(--ink); }
-.position { margin-top: 1px; font-weight: 500; color: var(--ink); }
-.position span { font-weight: 400; color: var(--muted); }
+h3, h3.org-name { font-size: var(--t1); font-weight: 600; letter-spacing: -0.005em; color: var(--ink); }
+.position, .awards .entry .sub { margin-top: 1px; font-size: var(--t2); font-weight: 500; color: var(--ink); }
+.position span, .awards .entry .sub span { font-weight: 400; color: var(--muted); }
 
 /* projects hang under their organisation, marked by a hairline */
 .project { grid-column: 2; margin-top: 9px; padding-left: 11px; border-left: 1px solid var(--rule); }
-.project h4 { margin: 0; font-size: 1rem; font-weight: 600; color: var(--ink); }
+.project h4 { margin: 0; font-size: var(--t2); font-weight: 600; color: var(--ink); }
 .project h4 span { font-weight: 400; color: var(--muted); }
 
 /* Role / Action / Impact: quiet label column, text beside it */
@@ -59,18 +64,19 @@ li { position: relative; }
 .project li, .entry li { display: grid; grid-template-columns: 14mm 1fr; }
 .project li + li, .entry li + li { margin-top: 2.5px; }
 .project li i, .entry li i { padding-top: 0.28em; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.stack { margin-top: 4px; font-size: 0.88rem; color: var(--muted); }
+.stack { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+/* tech stack as quiet outline chips, echoing the tags on the portfolio site */
+.stack span { padding: 1px 7px 1.5px; border: 1px solid var(--rule); border-radius: 999px; font-size: 0.82rem; line-height: 1.45; color: var(--muted); white-space: nowrap; }
 
 /* ---- awards: detailed entries and one-line entries ---- */
 .entry { display: grid; grid-template-columns: var(--col) 1fr; grid-template-areas: "when title" ". sub" ". body" ". stack"; }
-.when { grid-area: when; padding-top: 1px; font-size: 0.9rem; color: var(--muted); white-space: nowrap; }
-h3 { grid-area: title; font-size: 1rem; font-weight: 600; color: var(--ink); }
+.when { grid-area: when; padding-top: 2px; font-size: var(--t-meta); color: var(--muted); white-space: nowrap; }
+h3 { grid-area: title; }
 .sub { grid-area: sub; color: var(--muted); }
-.org { color: var(--body); }
+.org { color: inherit; }
 .org + .meta::before { content: "\00a0\00b7\00a0"; }
 .entry .stack { grid-area: stack; }
 .awards .entry + .entry { margin-top: 12px; }
-.awards h3 { font-size: 1rem; }
 .awards .entry ul { margin-left: 0; padding-left: 11px; border-left: 1px solid var(--rule); margin-top: 5px; }
 
 /* one-line rows: awards without detail, education */
