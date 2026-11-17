@@ -44,7 +44,7 @@ window.PROJECTS = [
             "<strong>Impact</strong> Halved each operator&rsquo;s daily routine work (2 hours &rarr; 1); adopted for daily use by 8 managers",
             "<strong>Impact</strong> Consolidated individually managed files into one shared real-time view, enabling team cross-checks and reducing the risk of errors",
             "<strong>Impact</strong> Migrated 50K+ spreadsheet formulas into the system, correcting numerical errors in the legacy workbooks",
-            "<strong>Lesson</strong> Automation depends less on technology than on deciding <em>what the system handles and where human judgement remains</em>, a boundary defined together with the portfolio managers"
+            "<strong>Lesson</strong> Automation depends less on technology than on deciding <em>what the system handles and where human judgment remains</em>, a boundary defined together with the portfolio managers"
         ],
         "links": [],
         "tags": [
@@ -107,10 +107,10 @@ window.PROJECTS = [
         "summary": "Rebuilt 25 years of KOSPI and KOSDAQ data (approx. 300 million rows) into a database and pipeline for backtesting an equity private fund&rsquo;s factor strategies.",
         "features": [
             "<strong>Role</strong> Data pipeline and database, factor scoring, backtesting and performance analysis, dashboards",
-            "<strong>Action</strong> Normalised and standardised the data and loaded it into MySQL through a Python ETL pipeline",
+            "<strong>Action</strong> Normalized and standardized the data and loaded it into MySQL through a Python ETL pipeline",
             "<strong>Action</strong> Implemented factor scoring and quintile backtests in SQL, validating factors with beta-neutral long&ndash;short returns and IC across 1, 3, and 6 month rebalancing",
             "<strong>Impact</strong> Reduced backtest runtime by 80% and delivered dashboard reports to support factor selection",
-            "<strong>Impact</strong> Top factor group returned 22.1% annualised, about three times the KOSPI; contributed to the live fund strategy (fund return since inception: +83% as of May 2026)"
+            "<strong>Impact</strong> Top factor group returned 22.1% annualized, about three times the KOSPI; contributed to the live fund strategy (fund return since inception: +83% as of May 2026)"
         ],
         "links": [],
         "tags": [
@@ -135,7 +135,7 @@ window.PROJECTS = [
         "gallery": [],
         "summary": "Planned an AI service that predicts injury severity and guides delivery riders through injury claims; only about 1 in 10 riders in an accident is compensated.",
         "features": [
-            "<strong>Role</strong> Service planning, data collection and preprocessing, EDA, ML modelling, ChatGPT API claim alerts",
+            "<strong>Role</strong> Service planning, data collection and preprocessing, EDA, ML modeling, ChatGPT API claim alerts",
             "<strong>Action</strong> Collected 14,944 Seoul motorcycle accident records (2021&ndash;2023) and ran EDA by time, district, road type, and traffic violation",
             "<strong>Action</strong> Benchmarked seven tuned ML models, selected XGBoost, and identified the main risk factors from feature importance",
             "<strong>Action</strong> Integrated the predicted severity into a ChatGPT prompt that texts the rider the required documents, how to find a designated hospital, and the claim steps",
@@ -179,10 +179,10 @@ window.PROJECTS = [
             "images/projects/used-car-price/02.jpg",
             "images/projects/used-car-price/03.jpg"
         ],
-        "summary": "Engineered unstandardised cars.com listing fields into model-ready features and analysed US used-car price drivers for a Kaggle datathon.",
+        "summary": "Engineered unstandardized cars.com listing fields into model-ready features and analyzed US used-car price drivers for a Kaggle datathon.",
         "features": [
             "<strong>Role</strong> Problem definition, EDA, preprocessing and feature engineering, insight analysis",
-            "<strong>Action</strong> Standardised engine, transmission, and colour data into horsepower, displacement, transmission type, and colour-combination features",
+            "<strong>Action</strong> Standardized engine, transmission, and color data into horsepower, displacement, transmission type, and color-combination features",
             "<strong>Action</strong> Built an AutoGluon stacking ensemble (RF, LightGBM, XGBoost, CatBoost, and others) to predict price",
             "<strong>Action</strong> Identified mileage, model, and release year as the core price drivers with EDA and statistical tests, and found a price premium on 1990s retro cars",
             "<strong>Impact</strong> Improved prediction performance by 20% and won the Grand Prize"
@@ -217,9 +217,9 @@ window.PROJECTS = [
         ],
         "summary": "Planned an all-in-one app covering prevention, filing, approval, and rehabilitation to increase uptake of industrial injury insurance.",
         "features": [
-            "<strong>Role</strong> Service planning, public data collection and preprocessing, web crawling, ML modelling, ChatGPT API review summaries",
-            "<strong>Action</strong> Geocoded designated hospitals and vocational rehab centres and plotted them on a map",
-            "<strong>Action</strong> Crawled Kakao Map hospital reviews with Selenium and summarised the latest with the ChatGPT API",
+            "<strong>Role</strong> Service planning, public data collection and preprocessing, web crawling, ML modeling, ChatGPT API review summaries",
+            "<strong>Action</strong> Geocoded designated hospitals and vocational rehab centers and plotted them on a map",
+            "<strong>Action</strong> Crawled Kakao Map hospital reviews with Selenium and summarized the latest with the ChatGPT API",
             "<strong>Action</strong> Trained an ML model on 107,180 accident records to predict the most likely accident type from age, industry, and tenure",
             "<strong>Impact</strong> Delivered a working prototype and app design; received an Honorable Mention"
         ],
@@ -296,7 +296,7 @@ window.PROJECTS = [
             "<strong>Role</strong> Research direction and hypothesis, noise-allocation design, MNIST experiments and analysis",
             "<strong>Action</strong> Measured feature importance with SHAP, assigning less noise to important features and more to unimportant ones",
             "<strong>Action</strong> Distributed noise with continuous mapping functions (exponential, reciprocal, sigmoid) while holding total noise energy fixed, preserving the DP guarantee",
-            "<strong>Action</strong> Added zero-valued fake features to absorb noise in place of real ones, and analysed the privacy&ndash;performance tradeoff on MNIST",
+            "<strong>Action</strong> Added zero-valued fake features to absorb noise in place of real ones, and analyzed the privacy&ndash;performance tradeoff on MNIST",
             "<strong>Impact</strong> Outperformed a prior adaptive DP method (Talaei, 2024) under the same DP guarantee; won the Grand Prize"
         ],
         "links": [
@@ -332,8 +332,8 @@ window.PROJECTS = [
         ],
         "summary": "Built an autoencoder that learns normal patterns and flags rare attack periods in HAI, a time-series dataset from a power-plant industrial control system (ICS) testbed.",
         "features": [
-            "<strong>Role</strong> Data preprocessing, deep learning modelling, hyperparameter optimisation",
-            "<strong>Action</strong> Built skewness features from the mean, standard deviation, and median across approx. 550,000 rows, dropped columns with missing values, and normalised with RobustScaler",
+            "<strong>Role</strong> Data preprocessing, deep learning modeling, hyperparameter optimization",
+            "<strong>Action</strong> Built skewness features from the mean, standard deviation, and median across approx. 550,000 rows, dropped columns with missing values, and normalized with RobustScaler",
             "<strong>Action</strong> Addressed the class imbalance from rare attack periods with SMOTE",
             "<strong>Action</strong> Tuned a reconstruction-error autoencoder with Optuna and compared 95%, 98%, and dynamic thresholds to set the anomaly cut-off",
             "<strong>Impact</strong> Achieved a TaPR (a time-series anomaly detection metric) of 0.53"
@@ -366,12 +366,12 @@ window.PROJECTS = [
         "gallery": [
             "images/projects/kcontent-nlp/topics.jpg"
         ],
-        "summary": "Analysed reviews of hit K-content with topic modelling and translated the results into marketing insights that star ratings alone do not show.",
+        "summary": "Analyzed reviews of hit K-content with topic modeling and translated the results into marketing insights that star ratings alone do not show.",
         "features": [
-            "<strong>Role</strong> Review crawling and preprocessing, keyword extraction, LDA topic modelling, visualisation",
+            "<strong>Role</strong> Review crawling and preprocessing, keyword extraction, LDA topic modeling, visualization",
             "<strong>Action</strong> Crawled approx. 2,000 audience reviews of <em>Lovely Runner</em> and <em>Exhuma</em> with Selenium",
-            "<strong>Action</strong> Cleaned the reviews, extracted key nouns with TF-IDF, and summarised them in word clouds",
-            "<strong>Action</strong> Selected 26 topics by coherence score, ran LDA, and visualised topic relationships in pyLDAvis"
+            "<strong>Action</strong> Cleaned the reviews, extracted key nouns with TF-IDF, and summarized them in word clouds",
+            "<strong>Action</strong> Selected 26 topics by coherence score, ran LDA, and visualized topic relationships in pyLDAvis"
         ],
         "links": [
             {
