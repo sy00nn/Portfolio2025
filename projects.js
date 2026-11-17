@@ -35,16 +35,16 @@ window.PROJECTS = [
             "images/projects/fund-ops/07.jpg",
             "images/projects/fund-ops/05.jpg"
         ],
-        "summary": "Built a web-based management system for 33 funds that automates the operations team&rsquo;s daily routine work, from data collection through REPO and collateral calculations and compliance checks to trade instruction generation, in one place the team views and verifies together in real time.",
+        "summary": "Built a web system that automates the fund operations team&rsquo;s daily workflows across 33 funds, from data collection to trade instructions.",
         "features": [
-            "<strong>Role</strong> Workflow analysis and planning, custodian and back-office data pipelines, AWS infrastructure, web UX/UI design and development, and deployment and operations",
-            "<strong>Action</strong> Structured the asset management workflows to automate daily fund accounting records, bond orders, REPO trades, and compliance work, and added automatic generation of trade instructions and Excel files",
-            "<strong>Action</strong> Built a data pipeline that ingests daily custodian and back-office files, validates them row by row, sets aside bad rows with the reason, and retries failures, so operators see exactly which file and row needs attention",
-            "<strong>Action</strong> Automated regulatory limit checks under Korea&rsquo;s Capital Markets Act, giving portfolio managers and compliance the same real-time view, with near-breach and breach flags raised before trading",
-            "<strong>Impact</strong> Cut each operator&rsquo;s daily routine work from about 2 hours to 1; used every day by 8 portfolio managers across 33 funds",
-            "<strong>Impact</strong> Moved individual file-based work onto one shared team view, so colleagues double-check each other in real time and errors are less likely; sell orders now show live, smoothing work between portfolio managers and the trade instruction team",
-            "<strong>Impact</strong> Moved about 50,000 spreadsheet formulas into the system, fixing figure errors in the old workbooks, and made handovers and onboarding new operators easier",
-            "<strong>Lesson</strong> Learned that automation succeeds less on technology than on deciding <em>what the system handles and where people still judge</em>; the system took root once I understood the portfolio managers&rsquo; context and set that boundary together with them"
+            "<strong>Role</strong> Workflow analysis and planning, data pipelines, AWS infrastructure, web UX/UI design and development, deployment and operations",
+            "<strong>Action</strong> Automated daily fund accounting records, bond orders, REPO trades, and compliance work, including auto-generated trade instructions and Excel files",
+            "<strong>Action</strong> Built a pipeline that ingests daily custodian and back-office files, validates each row, and quarantines invalid rows with the failure reason",
+            "<strong>Action</strong> Automated regulatory limit checks under Korea&rsquo;s Capital Markets Act, flagging near-breaches and breaches before trading",
+            "<strong>Impact</strong> Halved each operator&rsquo;s daily routine work from approx. 2 hours to 1; adopted for daily use by 8 managers",
+            "<strong>Impact</strong> Consolidated individually managed files into one shared real-time view, enabling team cross-checks and reducing the risk of errors",
+            "<strong>Impact</strong> Migrated approx. 50,000 spreadsheet formulas into the system, correcting numerical errors in the legacy workbooks",
+            "<strong>Lesson</strong> Automation depends less on technology than on deciding <em>what the system handles and where human judgement remains</em>, a boundary defined together with the portfolio managers"
         ],
         "links": [],
         "tags": [
@@ -62,7 +62,7 @@ window.PROJECTS = [
     {
         "slug": "article-agent",
         "shortTitle": "Newsroom Agent",
-        "title": "Newsroom Agent",
+        "title": "Newsroom Agent: Multi-Agent Article Production",
         "category": "professional",
         "org": "Wrtn Technologies",
         "date": "2025.06 &ndash; 08",
@@ -72,13 +72,12 @@ window.PROJECTS = [
             "images/projects/article-agent/03.jpg",
             "images/projects/article-agent/05.jpg"
         ],
-        "summary": "To reduce quality gaps between reporters and make article writing more efficient, I planned and built six AI agents that automate the full article production process.",
+        "summary": "Planned and built six AI agents that automate article production, reducing quality variance across reporters.",
         "features": [
-            "<strong>Role</strong> Planning, crawling and API data pipelines, agent design and development, and web UX/UI development",
-            "<strong>Action</strong> Mapped the newsroom workflow and structured it into six AI agents: topic recommendation, research, drafting in each reporter&rsquo;s style learned from their recent articles, headline and subhead generation, copy review, and article recommendation by readers&rsquo; gender and age",
-            "<strong>Action</strong> Built a LangGraph multi-agent workflow, applying prompt engineering and few-shot examples for consistent outputs",
-            "<strong>Impact</strong> The drafting agent&rsquo;s architecture was used as the core of a government press-release agent, contributing to the contract win",
-            "<strong>Lesson</strong> Learned to map the workflow first, split it into clear system roles, and fit each feature naturally into the UX flow; AI should be applied selectively, where its value is clear"
+            "<strong>Role</strong> Planning, data pipelines, agent design and development, web UX/UI",
+            "<strong>Action</strong> Decomposed the newsroom workflow into six agents: topic recommendation, research, drafting in each reporter&rsquo;s style, headlines and subheads, copy review, and article recommendation by reader gender and age",
+            "<strong>Action</strong> Orchestrated the agents as a LangGraph multi-agent workflow, applying prompt engineering and few-shot examples for consistent outputs",
+            "<strong>Impact</strong> The drafting agent&rsquo;s architecture was adopted as the core of a government press-release agent, contributing to the contract win"
         ],
         "links": [
             {
@@ -105,13 +104,13 @@ window.PROJECTS = [
         "team": "2 people",
         "thumb": "images/projects/quant-research/overview.jpg",
         "gallery": [],
-        "summary": "Rebuilt 25 years of KOSPI and KOSDAQ market and financial data (about 300 million rows) into a database and data pipeline, creating a backtesting environment to test factor strategies for an equity private fund.",
+        "summary": "Rebuilt 25 years of KOSPI and KOSDAQ data (approx. 300 million rows) into a database and pipeline for backtesting an equity private fund&rsquo;s factor strategies.",
         "features": [
-            "<strong>Role</strong> Data pipeline design and database build, factor scoring, backtesting and performance analysis, and dashboard visualisation",
-            "<strong>Action</strong> Normalised and standardised the data, and built a MySQL research database through a Python ETL pipeline",
-            "<strong>Action</strong> Implemented SQL-based factor scoring and quintile backtests, validating factors with beta-neutral long&ndash;short returns and IC across 1, 3, and 6-month rebalancing",
-            "<strong>Impact</strong> Cut backtest time 80%, with dashboard reports supporting factor selection",
-            "<strong>Impact</strong> The top factor group returned 22.1% a year, about three times the KOSPI, contributing to the live fund strategy (fund return since inception +83% as of May 2026)"
+            "<strong>Role</strong> Data pipeline and database, factor scoring, backtesting and performance analysis, dashboards",
+            "<strong>Action</strong> Normalised and standardised the data and loaded it into MySQL through a Python ETL pipeline",
+            "<strong>Action</strong> Implemented factor scoring and quintile backtests in SQL, validating factors with beta-neutral long&ndash;short returns and IC across 1, 3, and 6 month rebalancing",
+            "<strong>Impact</strong> Reduced backtest runtime by 80% and delivered dashboard reports to support factor selection",
+            "<strong>Impact</strong> Top factor group returned 22.1% annualised, about three times the KOSPI; contributed to the live fund strategy (fund return since inception: +83% as of May 2026)"
         ],
         "links": [],
         "tags": [
@@ -127,20 +126,20 @@ window.PROJECTS = [
     {
         "slug": "rider-safety",
         "shortTitle": "Rider Safety AI",
-        "title": "AI Prediction Service for Platform Delivery Riders",
+        "title": "Injury Risk Prediction for Delivery Riders",
         "category": "competitions",
         "org": "2024 Outstanding Undergraduate Research Award, CAU AI Humanities",
         "date": "2024.08",
         "team": "2 people",
         "thumb": "images/projects/rider-safety/poster.jpg",
         "gallery": [],
-        "summary": "Delivery rider accidents keep rising, yet only about 1 in 10 riders who have an accident ends up compensated through workers&rsquo; injury insurance. To close that gap, I planned an AI service that predicts injury severity in an accident and guides riders through the claim process.",
+        "summary": "Planned an AI service that predicts injury severity and guides delivery riders through injury claims; only about 1 in 10 riders in an accident is compensated.",
         "features": [
-            "<strong>Role</strong> Problem definition and service planning, accident data collection and preprocessing, EDA, ML prediction modelling, and injury-claim alerts built on the ChatGPT API",
-            "<strong>Action</strong> Collected 14,944 Seoul motorcycle accident records (2021&ndash;2023), bucketed age and time of day, and ran EDA by time, district, road type, and traffic violation",
-            "<strong>Action</strong> Tuned and compared seven ML models, chose XGBoost, and used feature importance to surface the main risk factors",
-            "<strong>Action</strong> Fed the predicted injury severity into a ChatGPT prompt that texts the rider the required documents, how to find a designated hospital, and the claim steps",
-            "<strong>Impact</strong> Reached 96.5% accuracy and an F1-score of 0.96, and received the Outstanding Research Award"
+            "<strong>Role</strong> Service planning, data collection and preprocessing, EDA, ML modelling, ChatGPT API claim alerts",
+            "<strong>Action</strong> Collected 14,944 Seoul motorcycle accident records (2021&ndash;2023) and ran EDA by time, district, road type, and traffic violation",
+            "<strong>Action</strong> Benchmarked seven tuned ML models, selected XGBoost, and identified the main risk factors from feature importance",
+            "<strong>Action</strong> Integrated the predicted severity into a ChatGPT prompt that texts the rider the required documents, how to find a designated hospital, and the claim steps",
+            "<strong>Impact</strong> Achieved 96.5% accuracy and a 0.96 F1-score; received the Outstanding Research Award"
         ],
         "links": [
             {
@@ -180,13 +179,13 @@ window.PROJECTS = [
             "images/projects/used-car-price/02.jpg",
             "images/projects/used-car-price/03.jpg"
         ],
-        "summary": "In a Kaggle datathon predicting US used-car prices from cars.com listings, whose engine, transmission, and colour fields were written in no standard form, I turned those raw fields into features the model can easily learn from and analysed what drives price.",
+        "summary": "Engineered unstandardised cars.com listing fields into model-ready features and analysed US used-car price drivers for a Kaggle datathon.",
         "features": [
-            "<strong>Role</strong> Problem definition, EDA, preprocessing and feature engineering, and insight analysis",
-            "<strong>Action</strong> Standardised engine, transmission, and colour data and rebuilt them into horsepower, displacement, transmission type, and colour-combination features",
-            "<strong>Action</strong> Built a stacking ensemble of ML models (RF, LightGBM, XGBoost, CatBoost, and more) with AutoGluon to predict price",
-            "<strong>Action</strong> Used EDA and statistical tests to identify mileage, model, and release year as the core price drivers, and found a price premium on 1990s retro cars",
-            "<strong>Impact</strong> Improved prediction performance 20% and won the Grand Prize"
+            "<strong>Role</strong> Problem definition, EDA, preprocessing and feature engineering, insight analysis",
+            "<strong>Action</strong> Standardised engine, transmission, and colour data into horsepower, displacement, transmission type, and colour-combination features",
+            "<strong>Action</strong> Built an AutoGluon stacking ensemble (RF, LightGBM, XGBoost, CatBoost, and others) to predict price",
+            "<strong>Action</strong> Identified mileage, model, and release year as the core price drivers with EDA and statistical tests, and found a price premium on 1990s retro cars",
+            "<strong>Impact</strong> Improved prediction performance by 20% and won the Grand Prize"
         ],
         "links": [
             {
@@ -206,7 +205,7 @@ window.PROJECTS = [
     {
         "slug": "sanjae-mate",
         "shortTitle": "Sanjae Mate",
-        "title": "Sanjae Mate: All-in-One AI Service for Industrial Injury Claims",
+        "title": "Sanjae Mate: All-in-One Injury Claim Assistant",
         "category": "competitions",
         "org": "Honorable Mention, CAU Patent Competition",
         "date": "2024.12",
@@ -216,13 +215,13 @@ window.PROJECTS = [
             "images/projects/sanjae-mate/02.jpg",
             "images/projects/sanjae-mate/03.jpg"
         ],
-        "summary": "Injured workers under-use industrial injury insurance because filing is complex and information on hospitals and rehabilitation is hard to find. To fix that, I planned an all-in-one app that supports workers from prevention through filing, approval, and rehabilitation.",
+        "summary": "Planned an all-in-one app covering prevention, filing, approval, and rehabilitation to increase uptake of industrial injury insurance.",
         "features": [
-            "<strong>Role</strong> Problem definition and service planning, public data collection and preprocessing, web crawling, ML prediction modelling, and review summaries built on the ChatGPT API",
-            "<strong>Action</strong> Converted the addresses of designated hospitals and vocational rehab centres into coordinates and mapped them",
-            "<strong>Action</strong> Crawled hospital reviews from Kakao Map with Selenium and summarised the latest ones with the ChatGPT API",
-            "<strong>Action</strong> Trained an ML model on 107,180 accident records that predicts the most likely accident type from age, industry, and tenure",
-            "<strong>Impact</strong> Delivered a working prototype and app design, and received an Honorable Mention"
+            "<strong>Role</strong> Service planning, public data collection and preprocessing, web crawling, ML modelling, ChatGPT API review summaries",
+            "<strong>Action</strong> Geocoded designated hospitals and vocational rehab centres and plotted them on a map",
+            "<strong>Action</strong> Crawled Kakao Map hospital reviews with Selenium and summarised the latest with the ChatGPT API",
+            "<strong>Action</strong> Trained an ML model on 107,180 accident records to predict the most likely accident type from age, industry, and tenure",
+            "<strong>Impact</strong> Delivered a working prototype and app design; received an Honorable Mention"
         ],
         "links": [
             {
@@ -261,13 +260,13 @@ window.PROJECTS = [
         "gallery": [
             "images/projects/onchain-tracing/02.jpg"
         ],
-        "summary": "The 2017 WannaCry attack infected over 200,000 computers across 150 countries. Using on-chain transaction records, I traced how the bitcoin ransom paid by victims was laundered and cashed out.",
+        "summary": "Traced how the bitcoin ransom from the 2017 WannaCry attack (200,000+ computers, 150 countries) was laundered and cashed out, using on-chain transaction records.",
         "features": [
-            "<strong>Role</strong> Setting the tracing scope, on-chain fund-flow analysis, and laundering-method analysis",
-            "<strong>Action</strong> Clustered the ransom addresses of versions 1.0 and 2.0 in Chainalysis Reactor and followed their outgoing transactions",
-            "<strong>Action</strong> Traced funds through ShapeShift and Changelly into Monero, and followed the rest as it was split into small amounts and sent to several exchanges and P2P trades",
-            "<strong>Action</strong> Structured the laundering process into four steps: chain-hopping, conversion to Monero, splitting into small amounts, and cash-out through low-KYC exchanges",
-            "<strong>Impact</strong> Mapped how about 4.7 BTC (1.0) and 52 BTC (2.0) were converted into Monero, and placed 3rd"
+            "<strong>Role</strong> Tracing scope definition, on-chain fund-flow analysis, laundering-method analysis",
+            "<strong>Action</strong> Clustered the version 1.0 and 2.0 ransom addresses in Chainalysis Reactor and followed their outgoing transactions",
+            "<strong>Action</strong> Traced funds through ShapeShift and Changelly into Monero, and followed the remainder as it was split across several exchanges and P2P trades",
+            "<strong>Action</strong> Structured the laundering process into four stages: chain-hopping, conversion to Monero, splitting into small amounts, and cash-out through low-KYC exchanges",
+            "<strong>Impact</strong> Mapped the conversion of approx. 4.7 BTC (1.0) and 52 BTC (2.0) into Monero; placed 3rd"
         ],
         "links": [
             {
@@ -292,13 +291,13 @@ window.PROJECTS = [
         "team": "4 people",
         "thumb": "images/projects/dpfl-fusion/thumb.jpg",
         "gallery": [],
-        "summary": "Applying differential privacy (DP) in federated learning adds the same noise to every feature, which hurts model accuracy. To fix that, we proposed a framework that scales the noise on each feature by its SHAP importance.",
+        "summary": "Proposed a federated learning framework that scales differential privacy (DP) noise per feature by SHAP importance, replacing uniform noise that degrades accuracy.",
         "features": [
-            "<strong>Role</strong> Research direction and hypothesis, noise-allocation design, and MNIST experiments and analysis",
-            "<strong>Action</strong> Measured feature importance with SHAP, giving important features less noise and unimportant ones more",
-            "<strong>Action</strong> Spread the noise with continuous mapping functions (exponential, reciprocal, sigmoid) while keeping total noise energy fixed, so the DP guarantee holds",
+            "<strong>Role</strong> Research direction and hypothesis, noise-allocation design, MNIST experiments and analysis",
+            "<strong>Action</strong> Measured feature importance with SHAP, assigning less noise to important features and more to unimportant ones",
+            "<strong>Action</strong> Distributed noise with continuous mapping functions (exponential, reciprocal, sigmoid) while holding total noise energy fixed, preserving the DP guarantee",
             "<strong>Action</strong> Added zero-valued fake features to absorb noise in place of real ones, and analysed the privacy&ndash;performance tradeoff on MNIST",
-            "<strong>Impact</strong> Outperformed a prior adaptive DP method (Talaei, 2024) under the same DP guarantee, and won the Grand Prize"
+            "<strong>Impact</strong> Outperformed a prior adaptive DP method (Talaei, 2024) under the same DP guarantee; won the Grand Prize"
         ],
         "links": [
             {
@@ -331,13 +330,13 @@ window.PROJECTS = [
         "gallery": [
             "images/projects/hai-anomaly/01.jpg"
         ],
-        "summary": "To catch the rare attack periods in HAI, a time-series dataset from a testbed that mimics a power plant&rsquo;s industrial control system (ICS), I built an autoencoder that learns normal patterns and flags anomalies.",
+        "summary": "Built an autoencoder that learns normal patterns and flags rare attack periods in HAI, a time-series dataset from a power-plant industrial control system (ICS) testbed.",
         "features": [
-            "<strong>Role</strong> Data preprocessing, deep learning modelling, and hyperparameter optimisation",
-            "<strong>Action</strong> Built skewness features from the mean, standard deviation, and median across about 550,000 rows; dropped columns with missing values and normalised with RobustScaler",
-            "<strong>Action</strong> Corrected the class imbalance of rare attack periods with SMOTE",
-            "<strong>Action</strong> Tuned a reconstruction-error autoencoder with Optuna, and compared 95%, 98%, and dynamic thresholds to set the anomaly cut-off",
-            "<strong>Impact</strong> Reached a TaPR (time-series anomaly detection metric) of 0.53"
+            "<strong>Role</strong> Data preprocessing, deep learning modelling, hyperparameter optimisation",
+            "<strong>Action</strong> Built skewness features from the mean, standard deviation, and median across approx. 550,000 rows, dropped columns with missing values, and normalised with RobustScaler",
+            "<strong>Action</strong> Addressed the class imbalance from rare attack periods with SMOTE",
+            "<strong>Action</strong> Tuned a reconstruction-error autoencoder with Optuna and compared 95%, 98%, and dynamic thresholds to set the anomaly cut-off",
+            "<strong>Impact</strong> Achieved a TaPR (a time-series anomaly detection metric) of 0.53"
         ],
         "links": [
             {
@@ -367,12 +366,12 @@ window.PROJECTS = [
         "gallery": [
             "images/projects/kcontent-nlp/topics.jpg"
         ],
-        "summary": "To understand viewer reactions to hit K-content in more depth than star ratings allow, I analysed review text with topic modelling and turned the results into marketing insights.",
+        "summary": "Analysed reviews of hit K-content with topic modelling and translated the results into marketing insights that star ratings alone do not show.",
         "features": [
-            "<strong>Role</strong> Review data crawling and preprocessing, keyword extraction, LDA topic modelling, and visualisation",
-            "<strong>Action</strong> Crawled about 2,000 audience reviews of <em>Lovely Runner</em> and <em>Exhuma</em> with Selenium",
-            "<strong>Action</strong> Cleaned the review data and extracted key nouns with TF-IDF, then summarised them in word clouds",
-            "<strong>Action</strong> Chose 26 topics by coherence score, ran LDA, and visualised how the topics relate in pyLDAvis"
+            "<strong>Role</strong> Review crawling and preprocessing, keyword extraction, LDA topic modelling, visualisation",
+            "<strong>Action</strong> Crawled approx. 2,000 audience reviews of <em>Lovely Runner</em> and <em>Exhuma</em> with Selenium",
+            "<strong>Action</strong> Cleaned the reviews, extracted key nouns with TF-IDF, and summarised them in word clouds",
+            "<strong>Action</strong> Selected 26 topics by coherence score, ran LDA, and visualised topic relationships in pyLDAvis"
         ],
         "links": [
             {
@@ -412,15 +411,14 @@ window.PROJECTS_KO = {
         "note": "&#8251; 이미지 속 데이터는 모두 가상 데이터이며, 실제 회사·펀드와 무관합니다."
     },
     "article-agent": {
-        "title": "Newsroom Agent",
+        "title": "Newsroom Agent: 기사 생산 자동화 멀티 에이전트",
         "org": "(주)뤼튼테크놀로지스 AX팀",
         "summary": "기자별 품질 편차를 줄이고 기사 작성을 효율화하기 위해, 기사 생산 전 과정을 자동화한 6개의 AI Agent를 기획 및 개발했습니다.",
         "features": [
             "<strong>Role</strong> 기획, 웹 크롤링·API 기반 데이터 수집 파이프라인, Agent 설계 및 개발, Web UX/UI 개발",
             "<strong>Action</strong> 기사 생산 과정의 워크플로우를 6개 에이전트 역할로 구조화하여 기획: 주제 생성, 리서치, 기자 문체를 학습한 초안 작성, 제목·부제 생성, 윤문, 독자 성별·연령별 기사 추천",
             "<strong>Action</strong> LangGraph 기반 Multi-Agent Workflow를 설계하고, 출력 일관성을 위해 Prompt Engineering 및 Few-shot 적용",
-            "<strong>Impact</strong> 기사 초안 작성 에이전트 아키텍처가 정부기관 보도자료 작성 에이전트의 핵심 구조로 사용되어 계약 수주에 기여",
-            "<strong>Lesson</strong> 워크플로우를 먼저 파악해 시스템의 역할을 명확히 나누고, 각 기능이 UX 흐름에 자연스럽게 녹아들도록 설계하는 것이 중요함을 배움. AI는 효과가 명확한 곳에 선별해 적용해야 함을 느낌"
+            "<strong>Impact</strong> 기사 초안 작성 에이전트 아키텍처가 정부기관 보도자료 작성 에이전트의 핵심 구조로 사용되어 계약 수주에 기여"
         ]
     },
     "quant-research": {
@@ -436,7 +434,7 @@ window.PROJECTS_KO = {
         ]
     },
     "rider-safety": {
-        "title": "플랫폼 배달 라이더를 위한 AI 예측 서비스",
+        "title": "배달 라이더 사고 부상 예측 및 산재 신청 안내 서비스",
         "org": "제33회 중앙대학교 인공지능인문학 국내학술대회 연구우수상",
         "summary": "배달 라이더 사고는 늘고 있지만 사고를 겪은 라이더 10명 중 1명만 산재 보상을 받는 문제를 해결하기 위해, 사고 시 상해 정도를 예측하고 산재 신청 절차를 안내하는 AI 서비스를 기획했습니다.",
         "features": [
