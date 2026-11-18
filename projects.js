@@ -41,7 +41,7 @@ window.PROJECTS = [
             "<strong>Action</strong> Automated daily fund accounting records, bond orders, REPO trades, and compliance work, including auto-generated trade instructions and Excel files",
             "<strong>Action</strong> Built a pipeline that ingests daily custodian and back-office files, validates each row, and quarantines invalid rows with the failure reason",
             "<strong>Action</strong> Automated regulatory limit checks under Korea&rsquo;s Capital Markets Act, flagging near-breaches and breaches before trading",
-            "<strong>Impact</strong> Halved each operator&rsquo;s daily routine work (2 hours &rarr; 1); adopted for daily use by 8 managers",
+            "<strong>Impact</strong> Halved each operator&rsquo;s daily routine work (2 hr &rarr; 1 hr); adopted for daily use by 8 managers",
             "<strong>Impact</strong> Consolidated individually managed files into one shared real-time view, enabling team cross-checks and reducing the risk of errors",
             "<strong>Impact</strong> Migrated 50K+ spreadsheet formulas into the system, correcting numerical errors in the legacy workbooks",
             "<strong>Lesson</strong> Automation depends less on technology than on deciding <em>what the system handles and where human judgment remains</em>, a boundary defined together with the portfolio managers"
@@ -51,7 +51,6 @@ window.PROJECTS = [
             "Python",
             "FastAPI",
             "pandas",
-            "SQL",
             "PostgreSQL",
             "React",
             "TypeScript",
@@ -89,7 +88,6 @@ window.PROJECTS = [
             "Python",
             "LangGraph",
             "Gradio",
-            "Streamlit",
             "Figma",
             "LLM (GPT, Claude, Gemini, Qwen)"
         ]
@@ -104,7 +102,7 @@ window.PROJECTS = [
         "team": "Team of 2",
         "thumb": "images/projects/quant-research/overview.jpg",
         "gallery": [],
-        "summary": "Rebuilt 25 years of KOSPI and KOSDAQ data (approx. 300 million rows) into a database and pipeline for backtesting an equity private fund&rsquo;s factor strategies.",
+        "summary": "Rebuilt 25 years of KOSPI and KOSDAQ data (300M rows) into a database and pipeline for backtesting an equity private fund&rsquo;s factor strategies.",
         "features": [
             "<strong>Role</strong> Data pipeline and database, factor scoring, backtesting and performance analysis, dashboards",
             "<strong>Action</strong> Normalized and standardized the data and loaded it into MySQL through a Python ETL pipeline",
@@ -122,7 +120,8 @@ window.PROJECTS = [
             "MySQL",
             "GCP",
             "SQLAlchemy"
-        ]
+        ],
+        "note": "&#8251; All data shown is fictitious and unrelated to any actual company or fund."
     },
     {
         "slug": "rider-safety",
@@ -163,6 +162,8 @@ window.PROJECTS = [
             "Matplotlib",
             "Seaborn",
             "scikit-learn",
+            "XGBoost",
+            "ChatGPT API",
             "Tableau"
         ]
     },
@@ -245,6 +246,8 @@ window.PROJECTS = [
             "Matplotlib",
             "Seaborn",
             "scikit-learn",
+            "Selenium",
+            "ChatGPT API",
             "Figma"
         ]
     },
@@ -277,8 +280,7 @@ window.PROJECTS = [
         ],
         "tags": [
             "Chainalysis Reactor",
-            "Blockchain Explorers",
-            "MS Office"
+            "Blockchain Explorers"
         ]
     },
     {
@@ -306,7 +308,7 @@ window.PROJECTS = [
                 "href": "projects/cuai_poster.pdf"
             },
             {
-                "label": "Site",
+                "label": "Website",
                 "href": "https://cuai.kr/projects"
             }
         ],
@@ -432,7 +434,8 @@ window.PROJECTS_KO = {
             "<strong>Action</strong> SQL 기반 팩터 스코어링, 5분위 백테스트 구현, 월·분기·반기 리밸런싱별 베타 중립 롱숏 수익률과 IC로 팩터 유효성 검증",
             "<strong>Impact</strong> 백테스트 시간 80% 단축, 결과를 대시보드 리포트로 제공해 팩터 선정 판단 지원",
             "<strong>Impact</strong> 팩터 상위 그룹의 연 수익률 22.1%로 KOSPI 대비 약 3배 성과를 확인하고, 실제 펀드 운용 전략에 기여 (해당 펀드 설정 이후 누적 +83%, 2026.05 기준)"
-        ]
+        ],
+        "note": "&#8251; 이미지 속 데이터는 모두 가상 데이터이며, 실제 회사·펀드와 무관합니다."
     },
     "rider-safety": {
         "title": "배달 라이더 사고 부상 예측 및 산재 신청 안내 서비스",

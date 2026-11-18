@@ -179,6 +179,20 @@
     var x = START, speed = BASE_SPEED, t = 0, act = '', actT = 0, phase = '', spawnT = 0, plane = null;
     var fx = 0, fActive = false, fDone = false, lastGap = 0;
 
+    // gap = distance still to close. Wave on approach, then reach out and
+    // high-five as the hands meet, then drop back to the bars.
+    // Hand targets differ per rider because the friend is smaller and set back:
+    // me (44,-143) * 1.1 from y 340 and friend (28,-164) * -0.92 from y 334 both
+    // land at scene y ~183, and touch when gap = 48.4 + 25.8.
+    var FIVE_ME = [44, -143], FIVE_FRIEND = [28, -164], FIVE_GAP = 74.2;
+    function greeting() {
+        var gap = fx - x;
+        if (!fActive) return '';
+        if (gap < 300 && gap > 150) return 'wave';
+        if (gap <= 150 && gap > 45) return 'five';
+        return '';
+    }
+
     function setAct(a) {
         if (a === act) return;
         act = a;
@@ -221,7 +235,7 @@
             if (phase === 'grab') return [[50, -73], GRIP_B];
             if (phase === 'throw') return [[62, -134], GRIP_B];
         }
-        if (a === 'wave') return [wave, GRIP_B];
+        if (a === 'wave') return [greeting() === 'five' ? FIVE_ME : wave, GRIP_B];
         if (a === 'wheee') return [[46, -148], [-26, -148]];
         return [GRIP_F, GRIP_B];
     }
@@ -242,13 +256,17 @@
         if (fActive) {
             fx -= 80 * dt;
             var gap = fx - x;
-            if (lastGap > 0 && gap <= 0) spawn('spark', (x + fx) / 2, 150, '<circle r="4"/>');
+            // the slap: red burst where the two palms meet
+            if (lastGap > FIVE_GAP && gap <= FIVE_GAP) {
+                spawn('spark', x + 1.1 * FIVE_ME[0], GROUND + 1.1 * FIVE_ME[1],
+                    '<circle r="3.5"/><path d="M0 -8 v-6 M7 -5 l4 -4 M-7 -5 l-4 -4 M8 2 h6 M-8 2 h-6"/>');
+            }
             lastGap = gap;
             if (fx < -100) { fActive = false; fDone = true; }
         }
 
         var a = '';
-        if (fActive && Math.abs(fx - x) < 140) a = 'wave';
+        if (greeting()) a = 'wave';
         else RANGES.forEach(function (r) { if (x >= r[0] && x < r[1]) a = r[2]; });
         setAct(a);
         actT += dt;
@@ -284,8 +302,8 @@
         var kh = 1 - Math.exp(-dt * 8);
         var h = handsFor(act);
         me.reach(h[0], h[1], kh);
-        var near = fActive && Math.abs(fx - x) < 140;
-        friend.reach(near ? [30 + 4 * Math.sin(t * 14 + 1), -158] : GRIP_F, GRIP_B, kh);
+        var g = greeting();
+        friend.reach(g === 'five' ? FIVE_FRIEND : g === 'wave' ? [30 + 4 * Math.sin(t * 14 + 1), -158] : GRIP_F, GRIP_B, kh);
 
         me.draw(x, GROUND, SCALE, speed, dt, t);
         friend.g.style.display = fActive ? '' : 'none';

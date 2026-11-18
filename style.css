@@ -54,6 +54,8 @@ body {
     font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: var(--text);
     background: var(--paper);
+    /* fixed like the sticky bars' paper, so the two gradients line up seamlessly */
+    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -181,6 +183,31 @@ body {
 
 .panel.active {
     display: block;
+}
+
+/* switching tabs: the new panel's blocks fade in and rise a little, one after
+   another. Animating children (not the panel) keeps the panel's own scroll
+   and sticky behaviour untouched. Reduced motion is handled globally below. */
+.panel.active > * {
+    animation: panel-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.panel.active > :nth-child(2) { animation-delay: 0.06s; }
+.panel.active > :nth-child(3) { animation-delay: 0.12s; }
+.panel.active > :nth-child(n+4) { animation-delay: 0.18s; }
+
+/* sticky bars with a fixed paper background only fade: a transform would
+   briefly detach their paper from the page ground */
+.panel.active > .project-filter { animation-name: panel-fade; }
+
+@keyframes panel-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes panel-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
 }
 
 /* soft scrollbars + top/bottom scroll fade */
@@ -354,6 +381,8 @@ body {
 .thought-svg .ink .spokes { stroke-width: 0.8; opacity: 0.6; }
 
 .thought-svg .scenery { opacity: 0.28; }
+/* scenery is scaled per item in the markup; keep its line weight unchanged */
+.thought-svg .scenery path { vector-effect: non-scaling-stroke; }
 .thought-svg .ink .lattice { stroke-width: 0.8; }
 .thought-svg .rider-friend { opacity: 0.75; }
 
@@ -408,6 +437,7 @@ body {
 .thought-svg .sparkle { animation: rider-sparkle 1.1s ease-out forwards; }
 .thought-svg .ink .sparkle.accent path { stroke: #e8412a; }
 .thought-svg .ink .spark circle { fill: #e8412a; stroke: none; }
+.thought-svg .ink .spark path { stroke: #e8412a; stroke-width: 1.4; }
 .thought-svg .spark { animation: rider-spark 1.8s ease-out forwards; }
 
 @keyframes rider-sway {
@@ -774,6 +804,22 @@ body {
     z-index: 1;
     background: var(--paper);
     background-attachment: fixed;
+}
+
+/* soft lower edge: the same paper continues below the bar and fades out,
+   so the list dissolves under it instead of being cut off */
+.project-filter::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 28px;
+    background: var(--paper);
+    background-attachment: fixed;
+    -webkit-mask-image: linear-gradient(to bottom, #000, transparent);
+    mask-image: linear-gradient(to bottom, #000, transparent);
+    pointer-events: none;
 }
 
 .filter-btn {
@@ -1437,6 +1483,8 @@ img.project-detail-image { cursor: zoom-in; }
         position: static;
         background: none;
     }
+
+    .project-filter::after { display: none; }
 
     .project-list {
         padding-right: 0;
