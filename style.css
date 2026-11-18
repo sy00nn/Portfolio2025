@@ -309,6 +309,129 @@ body {
     object-fit: cover;
 }
 
+/* thought-lines animation (thoughts.js): left half of the stage, same
+   top and height as the portrait */
+.thought-slot {
+    grid-column: 1 / span 6;
+    position: relative;
+    min-height: 0;
+    height: 100%;
+}
+
+.thought-svg {
+    position: absolute;
+    top: var(--hero-stage-top);
+    left: 0;
+    width: 100%;
+    height: min(
+        calc(100% - var(--hero-stage-top) - var(--portrait-gap)),
+        calc(var(--portrait-max) * 1.18)
+    );
+}
+
+.thought-svg .ink path,
+.thought-svg .ink circle,
+.thought-svg .ink ellipse {
+    fill: none;
+    stroke: var(--text);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.thought-svg .ink .fill-ink { fill: var(--text); stroke: none; }
+.thought-svg .ink .fill-paper { fill: var(--bg); }
+.thought-svg .ink .accent { stroke: #e8412a; }
+
+.thought-svg .ink .band { stroke: none; }
+.thought-svg .ink .edge { stroke-width: 1.3; }
+.thought-svg .ink .hand { stroke-width: 1.2; }
+.thought-svg .ink .plaid { fill: url(#plaid); stroke: none; }
+.thought-svg .ink .crank  { stroke-width: 2; }
+.thought-svg .ink .saddle { stroke-width: 3; }
+.thought-svg .ink .bun-line { stroke: var(--bg); stroke-width: 0.8; }
+.thought-svg .ink .wisp { stroke-width: 1.1; }
+.thought-svg .ink .spokes { stroke-width: 0.8; opacity: 0.6; }
+
+.thought-svg .scenery { opacity: 0.28; }
+.thought-svg .ink .lattice { stroke-width: 0.8; }
+.thought-svg .rider-friend { opacity: 0.75; }
+
+.thought-ground {
+    stroke: var(--hairline);
+    stroke-width: 1;
+}
+
+/* head follows the moment */
+.rider .head {
+    transform-box: fill-box;
+    transform-origin: 30% 100%;
+    transition: transform 0.6s ease;
+}
+
+.rider .mouth { display: none; }
+.rider-me[data-act="sing"] .mouth,
+.rider-me[data-act="wheee"] .mouth { display: inline; }
+.rider-me[data-act="sing"] .smile,
+.rider-me[data-act="wheee"] .smile { display: none; }
+
+.rider-me[data-act="think"] .head { transform: rotate(-10deg); }
+.rider-me[data-act="idea"] .head  { transform: rotate(-5deg); }
+.rider-me[data-phase="throw"] .head,
+.rider-me[data-phase="done"] .head  { transform: rotate(-10deg); }
+.rider-me[data-act="wheee"] .head { transform: rotate(-12deg); }
+.rider-me[data-act="sing"] .head  { animation: rider-sway 0.76s ease-in-out infinite alternate; }
+
+/* props draw themselves in (pathLength="1") and fade out */
+.prop { opacity: 0; transition: opacity 0.4s ease; }
+.prop path,
+.prop circle {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.rider-me[data-act="think"] .prop-think,
+.rider-me[data-act="idea"] .prop-idea { opacity: 1; }
+
+.rider-me[data-act="think"] .prop-think :is(path, circle),
+.rider-me[data-act="idea"] .prop-idea :is(path, circle) { stroke-dashoffset: 0; }
+
+/* paper plane (moved by thoughts.js) */
+.rider-me[data-thrown] .basket-plane { display: none; }
+.thought-svg .ink .plane { fill: var(--bg); stroke: #e8412a; stroke-width: 1.1; }
+.thought-svg .ink .plane-trail { stroke: #e8412a; stroke-width: 0.9; stroke-dasharray: 2 4; opacity: 0.5; }
+
+/* particles spawned by thoughts.js; each removes itself on animationend */
+
+.thought-svg .note { animation: rider-note 2.4s ease-out forwards; }
+.thought-svg .sparkle { animation: rider-sparkle 1.1s ease-out forwards; }
+.thought-svg .ink .sparkle.accent path { stroke: #e8412a; }
+.thought-svg .ink .spark circle { fill: #e8412a; stroke: none; }
+.thought-svg .spark { animation: rider-spark 1.8s ease-out forwards; }
+
+@keyframes rider-sway {
+    from { transform: rotate(-6deg); }
+    to { transform: rotate(5deg); }
+}
+
+@keyframes rider-note {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+    15% { opacity: 1; }
+    100% { transform: translate(-60px, -46px) rotate(-14deg); opacity: 0; }
+}
+
+@keyframes rider-sparkle {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    100% { transform: scale(1.6) rotate(90deg); opacity: 0; }
+}
+
+@keyframes rider-spark {
+    0% { transform: scale(0); opacity: 1; }
+    25% { transform: scale(1.8); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
 .about-row {
     border-top: 1px solid var(--line);
     display: grid;
@@ -1221,6 +1344,9 @@ img.project-detail-image { cursor: zoom-in; }
         display: contents;
     }
 
+    /* too small to read in one column; it would also push the links down */
+    .thought-slot { display: none; }
+
     .about-links              { order: 1; }
     .hero-copy:first-of-type  { order: 2; }
     .portrait-slot            { order: 3; }
@@ -1470,6 +1596,8 @@ img.project-detail-image { cursor: zoom-in; }
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
+
+    .rider .head { animation: none; }
 }
 
 /* language toggle: the current language reads in full ink */

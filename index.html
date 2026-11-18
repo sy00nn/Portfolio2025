@@ -47,6 +47,45 @@
     <!-- ============ HOME ============ -->
     <section id="home" class="panel hero-panel active" aria-label="Home">
         <div class="hero-stage">
+            <div class="thought-slot" aria-hidden="true">
+                <svg class="thought-svg" viewBox="0 0 900 360" preserveAspectRatio="xMinYMax meet">
+                    <defs>
+                        <filter id="ink" x="-20%" y="-20%" width="140%" height="140%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="1" seed="7"/>
+                            <feDisplacementMap in="SourceGraphic" scale="0.6"/>
+                            <feGaussianBlur stdDeviation="0.12"/>
+                        </filter>
+                        <!-- checks for the plaid shirt -->
+                        <pattern id="plaid" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+                            <path d="M0 1.5 H6 M1.5 0 V6" stroke="#111" stroke-width="1" opacity="0.35"/>
+                        </pattern>
+                    </defs>
+                    <!-- distant landmarks, home to the world: Lotte World Tower, Parthenon, Eiffel Tower -->
+                    <g class="scenery ink" filter="url(#ink)">
+                        <path d="M91 340 C93 262 101 200 108 152 L110 138 L112 152 C119 200 127 262 129 340"/>
+                        <path d="M110 340 C110 262 110 200 110 154 M104 172 h12 M101 196 h18 M97 236 h26"/>
+                        <path d="M424 286 L472 267 L520 286 Z M424 291 H520 M424 296 H520"/>
+                        <path d="M432 298 V336 M437 298 V336 M451 298 V336 M456 298 V336 M470 298 V336 M475 298 V336 M489 298 V336 M494 298 V336 M508 298 V336 M513 298 V336 M418 336 H526"/>
+                        <path d="M760 340 Q777 290 784 236 L787 192 L789 162 M820 340 Q803 290 796 236 L793 192 L791 162 M790 162 V146"/>
+                        <path d="M770 340 Q790 312 810 340 M772 300 H808 M781 236 H799 M786 194 H794"/>
+                        <path class="lattice" d="M777 300 L796 236 M803 300 L784 236 M783 236 L792 194 M797 236 L788 194"/>
+                        <!-- a couple of small trees between the landmarks -->
+                        <!-- two-line trunk with root flare and branches, bumpy leafy crown -->
+                        <path d="M279 340 q4 -2 4 -10 Q284 322 283 312 M294 340 q-4 -2 -4 -10 Q289 322 290 312"/>
+                        <path d="M283 314 l-7 -8 M290 313 l7 -7 M286 313 v-9"/>
+                        <path d="M266 304 q-6 -10 4 -15 q2 -10 13 -9 q6 -8 15 -2 q11 -1 11 9 q9 5 3 14 q2 8 -8 9 q-6 6 -14 2 q-8 4 -14 -1 q-10 1 -10 -7 Z"/>
+                        <path d="M275 296 q4 -4 8 -1 M292 290 q4 -4 8 0 M296 302 q3 -3 6 0"/>
+                        <path d="M640 340 V320"/>
+                        <path d="M640 290 C630 304 628 318 640 320 C652 318 650 304 640 290 Z"/>
+                    </g>
+                    <path class="thought-ground" d="M0 340.5 H900"/>
+                    <g class="ink" filter="url(#ink)">
+                        <g class="rider rider-friend" style="display:none"></g>
+                        <g class="rider rider-me"></g>
+                    </g>
+                    <g class="particles ink"></g>
+                </svg>
+            </div>
             <div class="portrait-slot">
                 <img class="portrait" src="images/IMG_ME.JPG" alt="Seoyoon Park at the Parthenon in Athens" data-optional-image>
             </div>
@@ -273,6 +312,7 @@
 </main>
 
 <script src="projects.js"></script>
+<script src="thoughts.js" defer></script>
 <dialog id="lightbox" class="lightbox" aria-label="Enlarged image"><img src="" alt=""></dialog>
     <script>
 (function () {
