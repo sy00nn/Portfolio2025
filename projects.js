@@ -120,6 +120,7 @@ window.PROJECTS = [
             "Matplotlib",
             "Seaborn",
             "MySQL",
+            "GCP",
             "SQLAlchemy"
         ]
     },
